@@ -20,9 +20,14 @@ if ($req_per == 1) {
 		$students_mother_phone = $_POST['students_mother_phone'];
 		$students_mother_occupation = $_POST['students_mother_occupation'];
 		try {
+			$stmt1 = $conn->prepare("SELECT classes_and_fee_fee  FROM classes_and_fee WHERE classes_and_fee_value='$classes_and_fee_value'");
+		$stmt1->execute();
+		foreach ($stmt1 as $row1)
+			$classes_and_fee_fee = $row1['classes_and_fee_fee'];
 			date_default_timezone_set('Asia/Kolkata');
 			$today = date('d-m-Y h:i:s a');
-			$stmt = $conn->prepare("UPDATE students SET
+			$stmt = $conn->prepare("UPDATE students SET students_total_school_fee=:students_total_school_fee,
+			students_total_school_fee_balance=:students_total_school_fee_balance,
 			students_name=:students_name,
 			students_class=:students_class,
 			students_DOB=:students_DOB,
@@ -40,6 +45,8 @@ if ($req_per == 1) {
 			students_address=:students_address,
 			students_updated_date=:students_updated_date WHERE students_id=:id");
 			$stmt->execute([
+				'students_total_school_fee'=>$classes_and_fee_fee,
+				'students_total_school_fee_balance'=>$classes_and_fee_fee,
 				'students_name' => $name,
 				'students_class' => $classes_and_fee_value,
 				'students_DOB' => $students_DOB,

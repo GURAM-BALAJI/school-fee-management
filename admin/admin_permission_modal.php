@@ -61,7 +61,17 @@
                 </tr>
                 <tr>
                     <td> </td>
-                    <td> students </td>
+                    <td> PAYMENTS </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="payments_view" <?php if ($row['payments_view']) echo "checked"; ?>> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="payments_create" <?php if ($row['payments_create']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="payments_del" <?php if ($row['payments_del']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> STUDENTS </td>
                     <td style="text-align: center;"> <input type="checkbox" name="students_view" <?php if ($row['students_view']) echo "checked"; ?>> </td>
                     <td style="text-align: center;"> <input type="checkbox" name="students_create" <?php if ($row['students_create']) echo "checked"; ?>> </td>
                     <td style="text-align: center;"> <input type="checkbox" name="students_edit" <?php if ($row['students_edit']) echo "checked"; ?>> </td>
@@ -73,7 +83,7 @@
 
                 <tr>
                     <td> </td>
-                    <td> Class and Fee </td>
+                    <td> CLASS AND FEE </td>
                     <td style="text-align: center;"> <input type="checkbox" name="classes_and_fee_view" <?php if ($row['classes_and_fee_view']) echo "checked"; ?>> </td>
                     <td style="text-align: center;"> <input type="checkbox" name="classes_and_fee_create" <?php if ($row['classes_and_fee_create']) echo "checked"; ?>> </td>
                     <td style="text-align: center;"> <input type="checkbox" name="classes_and_fee_edit" <?php if ($row['classes_and_fee_edit']) echo "checked"; ?>> </td>

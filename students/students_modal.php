@@ -23,11 +23,11 @@
                             <select class="form-control" name="classes_and_fee_value" required>
                                 <option value="">Select Class</option>
                                 <?php
-                $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee");
-                $stmt1->execute();
-                foreach ($stmt1 as $row1)
-                  echo "<option value='" . $row1['classes_and_fee_value'] . "'>" . $row1['classes_and_fee_class'] . '(' . $row1['classes_and_fee_fee'] . ')' . "</option>";
-                ?>
+                                $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee");
+                                $stmt1->execute();
+                                foreach ($stmt1 as $row1)
+                                    echo "<option value='" . $row1['classes_and_fee_value'] . "'>" . $row1['classes_and_fee_class'] . '(' . $row1['classes_and_fee_fee'] . ')' . "</option>";
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -89,8 +89,7 @@
                     <div class="form-group">
                         <label for="students_address" class="col-sm-4 control-label">Address</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" name="students_address" rows="4" cols="50" required
-                                autocomplete="OFF"></textarea>
+                            <textarea class="form-control" name="students_address" rows="4" cols="50" required autocomplete="OFF"></textarea>
                         </div>
                     </div>
 
@@ -98,8 +97,7 @@
                     <div class="form-group">
                         <label for="students_father_name" class="col-sm-4 control-label">Father Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="students_father_name" required
-                                autocomplete="OFF">
+                            <input type="text" class="form-control" name="students_father_name" required autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
@@ -111,16 +109,14 @@
                     <div class="form-group">
                         <label for="students_father_occupation" class="col-sm-4 control-label">Father Occupation</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="students_father_occupation"
-                                autocomplete="OFF">
+                            <input type="text" class="form-control" name="students_father_occupation" autocomplete="OFF">
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="students_mother_name" class="col-sm-4 control-label">Mother Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="students_mother_name" required
-                                autocomplete="OFF">
+                            <input type="text" class="form-control" name="students_mother_name" required autocomplete="OFF">
                         </div>
                     </div>
 
@@ -135,14 +131,12 @@
                     <div class="form-group">
                         <label for="students_mother_occupation" class="col-sm-4 control-label">Mother Occupation</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="students_mother_occupation"
-                                autocomplete="OFF">
+                            <input type="text" class="form-control" name="students_mother_occupation" autocomplete="OFF">
                         </div>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
-                        class="fa fa-close"></i> Close</button>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i>
                     Add</button>
                 </form>
@@ -174,7 +168,7 @@
                     <div class="form-group">
                         <label for="class" class="col-sm-4 control-label">Class </label>
                         <div class="col-sm-8">
-                      <span id="edit_students_class"></span>
+                            <span id="edit_students_class"></span>
                         </div>
                     </div>
 
@@ -188,7 +182,7 @@
                     <div class="form-group">
                         <label for="students_gender" class="col-sm-4 control-label">Gender</label>
                         <div class="col-sm-8">
-                        <span id="edit_students_gender"></span>
+                            <span id="edit_students_gender"></span>
                         </div>
                     </div>
 
@@ -223,8 +217,7 @@
                     <div class="form-group">
                         <label for="students_address" class="col-sm-4 control-label">Address</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" id="edit_students_address" name="students_address" rows="4" cols="50" required
-                                autocomplete="OFF"></textarea>
+                            <textarea class="form-control" id="edit_students_address" name="students_address" rows="4" cols="50" required autocomplete="OFF"></textarea>
                         </div>
                     </div>
 
@@ -232,8 +225,7 @@
                     <div class="form-group">
                         <label for="students_father_name" class="col-sm-4 control-label">Father Name</label>
                         <div class="col-sm-8">
-                            <input type="text" id="edit_students_father_name" class="form-control" name="students_father_name" required
-                                autocomplete="OFF">
+                            <input type="text" id="edit_students_father_name" class="form-control" name="students_father_name" required autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
@@ -245,16 +237,14 @@
                     <div class="form-group">
                         <label for="students_father_occupation" class="col-sm-4 control-label">Father Occupation</label>
                         <div class="col-sm-8">
-                            <input type="text" id="edit_students_father_occupation" class="form-control" name="students_father_occupation"
-                                autocomplete="OFF">
+                            <input type="text" id="edit_students_father_occupation" class="form-control" name="students_father_occupation" autocomplete="OFF">
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="students_mother_name" class="col-sm-4 control-label">Mother Name</label>
                         <div class="col-sm-8">
-                            <input type="text" id="edit_students_mother_name" class="form-control" name="students_mother_name" required
-                                autocomplete="OFF">
+                            <input type="text" id="edit_students_mother_name" class="form-control" name="students_mother_name" required autocomplete="OFF">
                         </div>
                     </div>
 
@@ -269,15 +259,13 @@
                     <div class="form-group">
                         <label for="students_mother_occupation" class="col-sm-4 control-label">Mother Occupation</label>
                         <div class="col-sm-8">
-                            <input type="text" id="edit_students_mother_occupation" class="form-control" name="students_mother_occupation"
-                                autocomplete="OFF">
+                            <input type="text" id="edit_students_mother_occupation" class="form-control" name="students_mother_occupation" autocomplete="OFF">
                         </div>
                     </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
-                        class="fa fa-close"></i> Close</button>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i>
                     Update</button>
                 </form>
@@ -300,12 +288,11 @@
                     <input type="hidden" class="delete_students_id" name="id">
                     <div class="text-center">
                         <h3>DELETE STUDENT</h3>
-                       ID : <b class="bold delete_students_id_view"></b> & NAME : <b class="bold delete_students_name"></b>
+                        ID : <b class="bold delete_students_id_view"></b> & NAME : <b class="bold delete_students_name"></b>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
-                        class="fa fa-close"></i> Close</button>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 <button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i>
                     Delete</button>
                 </form>
@@ -331,6 +318,52 @@
                             <span id="view_students_name"></span>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <center>
+                            <table border="1" >
+                                <tr>
+                                    <th style="padding: 10px;">FEE NAME</th>
+                                    <th style="padding: 10px;">TOTAL FEE</th>
+                                    <th style="padding: 10px;">PAID</th>
+                                    <th style="padding: 10px;">BALANCE</th>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 5px;">SCHOOL FEE</th>
+                                    <td style="padding: 5px;"> <span id="view_students_total_school_fee"></span></td>
+                                    <td style="padding: 5px;"><span id="view_student_total_school_fee_paid"></span></td>
+                                    <td style="padding: 5px;"> <span id="view_students_total_school_fee_balance"></span></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 5px;">BOOKS FEE</th>
+                                    <td style="padding: 5px;"> <span id="view_students_total_books_fee"></span></td>
+                                    <td style="padding: 5px;"><span id="view_student_total_books_fee_paid"></span></td>
+                                    <td style="padding: 5px;"> <span id="view_students_total_books_fee_balance"></span></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 5px;">DRESS FEE</th>
+                                    <td style="padding: 5px;"> <span id="view_students_total_dress_fee"></span></td>
+                                    <td style="padding: 5px;"><span id="view_student_total_dress_fee_paid"></span></td>
+                                    <td style="padding: 5px;"> <span id="view_students_total_dress_fee_balance"></span></td>
+                                </tr>
+                                <tr>
+                                    <th style="padding: 5px;">TRANSPORT FEE</th>
+                                    <td style="padding: 5px;"> <span id="view_students_total_transport_fee"></span></td>
+                                    <td style="padding: 5px;"><span id="view_student_total_transport_fee_paid"></span></td>
+                                    <td style="padding: 5px;"> <span id="view_students_total_transport_fee_balance"></span></td>
+                                </tr>
+                            </table>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="view_students_DOB" class="col-sm-4 control-label">Date Of Birth : </label>
+                        <div class="col-sm-8">
+                            <span id="view_students_DOB"></span>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="students_cast" class="col-sm-4 control-label">Cast : </label>
                         <div class="col-sm-8">
@@ -411,8 +444,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
-                            class="fa fa-close"></i> Close</button>
+                    <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 </div>
             </form>
         </div>
@@ -424,25 +456,45 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="students_photo_name"></span></b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><b><span class="students_photo_name"></span></b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="students_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="students_photo_id" name="id">
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo" required>
+                <form class="form-horizontal" method="POST" action="students_photo.php" enctype="multipart/form-data">
+                    <input type="hidden" class="students_photo_id" name="id">
+                    <div class="form-group">
+                        <label for="photo" class="col-sm-3 control-label">Photo</label>
+                        <div class="col-sm-9">
+                            <input type="file" id="photo" name="photo" required>
+                        </div>
                     </div>
-                </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
-              </form>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+                <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
+                </form>
             </div>
         </div>
     </div>
-</div> 
+</div>
+
+<!-- Fee view -->
+<div class="modal fade" id="fee_details">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><b>Fee Details</b></h4>
+            </div>
+            <div class="modal-body">
+              <div id="fee_view"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

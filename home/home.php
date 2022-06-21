@@ -48,6 +48,52 @@ include '../includes/header.php'; ?>
         <!-- /.row -->
         <div class="row">
           <!-- ./col -->
+          <?php if ($admin['payments_view']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-blue">
+                <div class="inner">
+                  <?php
+                  date_default_timezone_set('Asia/Kolkata');
+                  $today = date('d-m-Y');
+                  $sql6 = "SELECT * FROM payments WHERE payments_date='$today'";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  echo "<h3>" . $query . "</h3>";
+                  ?>
+                  <div class="stat-panel-title text-uppercase">Todays Payment's</div>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-money"></i>
+                </div>
+                <a href="../payments/payments.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
+          <?php if ($admin['students_view']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <?php
+                  $sql6 = "SELECT students_id from students Where students_deleted='0'";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  echo "<h3>" . $query . "</h3>";
+                  ?>
+                  <div class="stat-panel-title text-uppercase">Total students's</div>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-users"></i>
+                </div>
+                <a href="../students/students.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
           <?php if ($admin['admin_view']) { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
@@ -70,56 +116,37 @@ include '../includes/header.php'; ?>
                   ?>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-users"></i>
+                  <i class="fa fa-grav"></i>
                 </div>
                 <a href="../admin/admin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
-          <?php if ($admin['students_view']) { ?>
+    
+          <?php if ($admin['classes_and_fee_view']) { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
                   <?php
-                  $sql6 = "SELECT students_id from students Where students_deleted='0'";
+                  $sql6 = "SELECT classes_and_fee_id from classes_and_fee ";
                   $query6 = $conn->prepare($sql6);;
                   $query6->execute();
                   $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
                   $query = $query6->rowCount();
                   echo "<h3>" . $query . "</h3>";
                   ?>
-                  <div class="stat-panel-title text-uppercase">Total students's</div>
+                  <div class="stat-panel-title text-uppercase">Total classes and fee's</div>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-handshake-o"></i>
-                </div>
-                <a href="../students/students.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-          <?php } ?>
-          <?php if ($admin['classes_and_fee_view']) { ?>
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <?php
-                  $sql6 = "SELECT classes_and_fee_id from classes_and_fee Where classes_and_fee_deleted='0'";
-                  $query6 = $conn->prepare($sql6);;
-                  $query6->execute();
-                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
-                  $query = $query6->rowCount();
-                  echo "<h3>" . $query . "</h3>";
-                  ?>
-                  <div class="stat-panel-title text-uppercase">Total classes_and_fee's</div>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-camera"></i>
+                  <i class="fa fa-signal"></i>
                 </div>
                 <a href="../classes_and_fee/classes_and_fee.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
+
+
         </div>
     </div>
 
