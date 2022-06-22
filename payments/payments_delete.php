@@ -51,4 +51,4 @@ if (isset($_POST['delete'])) {
 	$_SESSION['error'] = 'Select payments to delete first';
 }
 
-header('location: payments.php');
+header('location: index.php');

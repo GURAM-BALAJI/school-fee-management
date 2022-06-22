@@ -79,8 +79,6 @@
                     <td> </td>
                      <td> </td>
                 </tr>
-           
-
                 <tr>
                     <td> </td>
                     <td> CLASS AND FEE </td>
@@ -91,7 +89,46 @@
                     <td> </td>
                     <td> </td>
                 </tr>
-                
+                <tr>
+                    <td> </td>
+                    <td> PAYMENT LIST </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="payments_records_view" <?php if ($row['payments_records_view']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> PAYMENT PENDING LIST </td>
+                    <td style="text-align: center;"> <input type="checkbox" name="payment_pending_records_view" <?php if ($row['payment_pending_records_view']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> STUDENTS LIST</td>
+                    <td style="text-align: center;"> <input type="checkbox" name="students_records_view" <?php if ($row['students_records_view']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> NOT TAKEN LIST</td>
+                    <td style="text-align: center;"> <input type="checkbox" name="not_taken_records_view" <?php if ($row['not_taken_records_view']) echo "checked"; ?>> </td>
+                    <td> </td>
+                    <td> </td>
+                     <td> </td>
+                     <td> </td>
+                     <td> </td>
+                </tr>
             </table>
         <?php } ?>
         <div class="modal-footer">

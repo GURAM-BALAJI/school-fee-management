@@ -21,6 +21,6 @@
 		$_SESSION['error'] = 'Select class and fee to delete first';
 	}
 }
-	header('location: classes_and_fee.php');
+	header('location: index.php');
 	
 ?>

@@ -24,5 +24,5 @@
 	}
 }
 
-	header('location: admin.php');
+	header('location: index.php');
 ?>

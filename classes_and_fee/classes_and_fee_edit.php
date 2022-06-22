@@ -28,4 +28,4 @@ if ($req_per == 1) {
 		$_SESSION['error'] = 'Fill up edit class and fee form first';
 	}
 }
-header('location: classes_and_fee.php');
+header('location: index.php');

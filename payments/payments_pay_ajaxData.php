@@ -61,6 +61,19 @@ if (isset($_POST["student_id"]) && !empty($_POST["student_id"]) && isset($_POST[
             </div>";
             }
             echo "<div class='form-group'>
+            <label for='pay' class='col-sm-3 control-label'>Payment Through</label>
+            <div class='col-sm-9'>
+                <select name='payment_through' class='form-control'>
+                <option value='1'>CASH</option>
+                <option value='2'>CARD</option>
+                <option value='3'>CHECK</option>
+                <option value='4'>UPI</option>
+                <option value='5'>NET BANKING</option>
+                <option value='6'>OTHERS</option>
+                </select>
+            </div>
+        </div>
+        <div class='form-group'>
             <label for='pay' class='col-sm-3 control-label'>Paid</label>
             <div class='col-sm-9'>
                 <input type='text' autocomplete='OFF' class='form-control' id='pay' name='pay''>

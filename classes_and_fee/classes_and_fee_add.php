@@ -32,6 +32,6 @@ if ($req_per == 1) {
 	}
 }
 
-header('location: classes_and_fee.php');
+header('location: index.php');
 
 ?>

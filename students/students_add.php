@@ -50,6 +50,6 @@ if ($req_per == 1) {
 	}
 }
 
-header('location: students.php');
+header('location: index.php');
 
 ?>

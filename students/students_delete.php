@@ -24,6 +24,6 @@
 	}
 }
 
-	header('location: students.php');
+	header('location: index.php');
 	
 ?>

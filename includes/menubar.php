@@ -13,13 +13,13 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li><a href="../home/home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li><a href="../home/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <?php
       if ($admin['payments_view']) { ?>
         <li class="header">PAYMENTS</li>
         <?php
         if ($admin['payments_view']) { ?>
-          <li><a href="../payments/payments.php"><i class="fa fa-money"></i> <span>Payments</span></a></li>
+          <li><a href="../payments/"><i class="fa fa-money"></i> <span>Payments</span></a></li>
         <?php } ?>
       <?php } ?>
       <?php
@@ -27,12 +27,32 @@
         <li class="header">MANAGE</li>
         <?php
         if ($admin['students_view']) { ?>
-          <li><a href="../students/students.php"><i class="fa fa-users"></i> <span>Students</span></a></li>
+          <li><a href="../students/"><i class="fa fa-users"></i> <span>Students</span></a></li>
         <?php } ?>
 
         <?php
         if ($admin['classes_and_fee_view']) { ?>
-          <li><a href="../classes_and_fee/classes_and_fee.php"><i class="fa fa-signal"></i> <span>Class and Fee</span></a></li>
+          <li><a href="../classes_and_fee/"><i class="fa fa-signal"></i> <span>Class and Fee</span></a></li>
+        <?php } ?>
+      <?php } ?>
+      <?php
+      if ($admin['payments_records_view'] || $admin['payment_pending_records_view'] || $admin['students_records_view']  || $admin['not_taken_records_view']) { ?>
+        <li class="header">RECORDS</li>
+        <?php
+        if ($admin['payments_records_view']) { ?>
+          <li><a href="../records/Payments_records.php"><i class="fa fa-file-text"></i> <span>Payments List</span></a></li>
+        <?php } ?>
+        <?php
+        if ($admin['payment_pending_records_view']) { ?>
+          <li><a href="../records/Payments_pending_records.php"><i class="fa fa-hourglass-end"></i> <span>Payments Pending List</span></a></li>
+        <?php } ?>
+        <?php
+        if ($admin['students_records_view']) { ?>
+          <li><a href="../records/students_records.php"><i class="fa fa-list"></i> <span>Students List</span></a></li>
+        <?php } ?>
+        <?php
+        if ($admin['not_taken_records_view']) { ?>
+          <li><a href="../records/not_taken_records.php"><i class="fa fa-exclamation"></i> <span>Not Taken List</span></a></li>
         <?php } ?>
       <?php } ?>
       <?php
@@ -40,7 +60,7 @@
         <li class="header">LOGIN'S</li>
         <?php
         if ($admin['admin_view']) { ?>
-          <li><a href="../admin/admin.php"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
+          <li><a href="../admin/"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
         <?php } ?>
       <?php } ?>
     </ul>

@@ -46,6 +46,6 @@ $stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'contact'
 	}
 }
 
-	header('location: admin.php');
+	header('location: index.php');
 
 ?>

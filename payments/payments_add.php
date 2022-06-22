@@ -5,6 +5,7 @@ if (isset($_POST['add'])) {
 	$student_id = $_POST['student_id'];
 	$fees_type = $_POST['fees_type'];
 	$total_fee = $_POST['total_fee'];
+	$payment_through = $_POST['payment_through'];
 	$pay = $_POST['pay'];
 	$by = $admin['admin_id'];
 	$conn = $pdo->open();
@@ -36,12 +37,12 @@ if (isset($_POST['add'])) {
 		date_default_timezone_set('Asia/Kolkata');
 		$now = date('d-m-Y h:i:s a');
 		$today = date('d-m-Y');
-		$stmt = $conn->prepare("INSERT INTO payments (payments_students_id,payments_type,payments_fee,payments_created_date,payments_by,payments_date) VALUES (:payments_students_id,:payments_type,:payments_fee,:payments_created_date,:payments_by,:payments_date)");
-		$stmt->execute(['payments_students_id' => $student_id, 'payments_type' => $fees_type, 'payments_fee' => $pay, 'payments_created_date' => $now, 'payments_by' => $by, 'payments_date' => $today]);
+		$stmt = $conn->prepare("INSERT INTO payments (payment_through,payments_students_id,payments_type,payments_fee,payments_created_date,payments_by,payments_date) VALUES (:payment_through,:payments_students_id,:payments_type,:payments_fee,:payments_created_date,:payments_by,:payments_date)");
+		$stmt->execute(['payment_through' => $payment_through, 'payments_students_id' => $student_id, 'payments_type' => $fees_type, 'payments_fee' => $pay, 'payments_created_date' => $now, 'payments_by' => $by, 'payments_date' => $today]);
 		$_SESSION['success'] = 'Payment added successfully';
 	} catch (PDOException $e) {
 		$_SESSION['error'] = $e->getMessage();
 	}
 }
 $pdo->close();
-header('location: payments.php');
+header('location: index.php');

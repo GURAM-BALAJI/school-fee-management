@@ -70,6 +70,7 @@
                         <th>Student</th>
                         <th>Type</th>
                         <th>Amount</th>
+                        <th>Through</th>
                         <th>Created Date</th>
                         <th>By</th>
                         <?php if ($admin['payments_del']) { ?>
@@ -104,15 +105,29 @@
                               echo "Transport Fee";
                             echo "</td>";
                             echo "<td>" . $row['payments_fee'] . "</td>";
+                            echo "<td>";
+                            if ($row['payment_through'] == '1')
+                              echo "CASH";
+                            elseif ($row['payment_through'] == '2')
+                              echo "CARD";
+                            elseif ($row['payment_through'] == '3')
+                              echo "CHECK";
+                            elseif ($row['payment_through'] == '4')
+                              echo "UPI";
+                            elseif ($row['payment_through'] == '5')
+                              echo "NET BANKING";
+                            elseif ($row['payment_through'] == '6')
+                              echo "OTHERS";
+                            echo "</td>";
                             echo "<td>" . $row['payments_created_date'] . "</td>";
                             $stmt1 = $conn->prepare("SELECT admin_id,admin_name FROM admin WHERE admin_id='" . $row['payments_by'] . "'");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
                               echo "<td>" . $row1['admin_name'] . " ( " . $row1['admin_id'] . " )</td>";
-                             
+
                             if ($admin['payments_del'])
                               echo "<td><button class='btn btn-warning btn-sm roll_back btn-flat' data-id='" . $row['payments_id'] . "'><i class='fa fa-undo'></i> Roll Back</button></td>";
-                           
+
                             echo "</tr>
                         ";
                           }

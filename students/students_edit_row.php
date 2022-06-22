@@ -21,19 +21,19 @@ if (isset($_POST['id'])) {
 	}
 	$students_class .= "</select>";
 
-	$students_gender = "<select class='form-control' name='students_gender' required>";
+	$students_gender = "<select class='form-control' name='students_gender'>";
 	if($row['students_gender']=='0')
-	$students_gender.= "<option value='".$row['students_gender']."' selected>Male</option>";
+	$students_gender.= "<option value='0' selected>Male</option>";
 else
 $students_gender.= "<option value='0'>Male</option>";
-	if($row['students_class']=='1')
-	$students_gender.= "<option value='".$row['students_gender']."' selected>Female</option>";
+	if($row['students_gender']=='1')
+	$students_gender.= "<option value='1' selected>Female</option>";
 	else
 	$students_gender.= "<option value='1'>Female</option>";
-	if($row['students_class']=='2')
-	$students_gender.= "<option value='".$row['students_gender']."' selected>Others</option>";
+	if($row['students_gender']=='2')
+	$students_gender.= "<option value='2' selected>Others</option>";
 	else
-	$students_gender.= "<option value='2'>Others</option>";
+	$students_gender.= "<option value='2'>Others</option></select>";
 
 	$row = array(
 		'students_id' => $row['students_id'],
