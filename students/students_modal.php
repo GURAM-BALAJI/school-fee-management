@@ -59,14 +59,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_cast" class="col-sm-4 control-label">Cast</label>
+                        <label for="students_cast" class="col-sm-4 control-label">Caste</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_cast">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother Tongue</label>
+                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_mother_tongue" required>
                         </div>
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_adher" class="col-sm-4 control-label">Adher No</label>
+                        <label for="students_adher" class="col-sm-4 control-label">Aadhaar No</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_adher" autocomplete="OFF">
                         </div>
@@ -95,33 +95,33 @@
 
                     <hr>
                     <div class="form-group">
-                        <label for="students_father_name" class="col-sm-4 control-label">Father Name</label>
+                        <label for="students_father_name" class="col-sm-4 control-label">Father's Name</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_father_name" required autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_phone" class="col-sm-4 control-label">Father Phone No</label>
+                        <label for="students_father_phone" class="col-sm-4 control-label">Father's Phone No</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_father_phone" autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_occupation" class="col-sm-4 control-label">Father Occupation</label>
+                        <label for="students_father_occupation" class="col-sm-4 control-label">Father's Occupation</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_father_occupation" autocomplete="OFF">
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label for="students_mother_name" class="col-sm-4 control-label">Mother Name</label>
+                        <label for="students_mother_name" class="col-sm-4 control-label">Mother's Name</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_mother_name" required autocomplete="OFF">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother Phone No</label>
+                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother's Phone No</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_mother_phone" autocomplete="OFF">
                         </div>
@@ -129,7 +129,7 @@
 
 
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother Occupation</label>
+                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother's Occupation</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_mother_occupation" autocomplete="OFF">
                         </div>
@@ -187,14 +187,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_cast" class="col-sm-4 control-label">Cast</label>
+                        <label for="students_cast" class="col-sm-4 control-label">Caste</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_cast" class="form-control" name="students_cast">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother Tongue</label>
+                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_mother_tongue" class="form-control" name="students_mother_tongue" required>
                         </div>
@@ -208,7 +208,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_adher" class="col-sm-4 control-label">Adher No</label>
+                        <label for="students_adher" class="col-sm-4 control-label">Aadhaar No</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_adher" class="form-control" name="students_adher" autocomplete="OFF">
                         </div>
@@ -223,33 +223,33 @@
 
                     <hr>
                     <div class="form-group">
-                        <label for="students_father_name" class="col-sm-4 control-label">Father Name</label>
+                        <label for="students_father_name" class="col-sm-4 control-label">Father's Name</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_father_name" class="form-control" name="students_father_name" required autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_phone" class="col-sm-4 control-label">Father Phone No</label>
+                        <label for="students_father_phone" class="col-sm-4 control-label">Father's Phone No</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_father_phone" class="form-control" name="students_father_phone" autocomplete="OFF">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_occupation" class="col-sm-4 control-label">Father Occupation</label>
+                        <label for="students_father_occupation" class="col-sm-4 control-label">Father's Occupation</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_father_occupation" class="form-control" name="students_father_occupation" autocomplete="OFF">
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label for="students_mother_name" class="col-sm-4 control-label">Mother Name</label>
+                        <label for="students_mother_name" class="col-sm-4 control-label">Mother's Name</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_mother_name" class="form-control" name="students_mother_name" required autocomplete="OFF">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother Phone No</label>
+                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother's Phone No</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_mother_phone" class="form-control" name="students_mother_phone" autocomplete="OFF">
                         </div>
@@ -257,7 +257,7 @@
 
 
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother Occupation</label>
+                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother's Occupation</label>
                         <div class="col-sm-8">
                             <input type="text" id="edit_students_mother_occupation" class="form-control" name="students_mother_occupation" autocomplete="OFF">
                         </div>
@@ -365,13 +365,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_cast" class="col-sm-4 control-label">Cast : </label>
+                        <label for="students_cast" class="col-sm-4 control-label">Caste : </label>
                         <div class="col-sm-8">
                             <span id="view_students_cast"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother Tongue : </label>
+                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_tongue"></span>
                         </div>
@@ -383,7 +383,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_adher" class="col-sm-4 control-label">Adher No : </label>
+                        <label for="students_adher" class="col-sm-4 control-label">Aadhaar No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_adher"></span>
                         </div>
@@ -395,37 +395,37 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_name" class="col-sm-4 control-label">Father Name : </label>
+                        <label for="students_father_name" class="col-sm-4 control-label">Father's Name : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_name"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_phone" class="col-sm-4 control-label">Father Phone No : </label>
+                        <label for="students_father_phone" class="col-sm-4 control-label">Father's Phone No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_phone"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_occupation" class="col-sm-4 control-label">Father Occupation : </label>
+                        <label for="students_father_occupation" class="col-sm-4 control-label">Father's Occupation : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_occupation"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_name" class="col-sm-4 control-label">Mother Name : </label>
+                        <label for="students_mother_name" class="col-sm-4 control-label">Mother's Name : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_name"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother Phone No : </label>
+                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother's Phone No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_phone"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother Occupation : </label>
+                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother's Occupation : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_occupation"></span>
                         </div>

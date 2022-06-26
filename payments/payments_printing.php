@@ -18,7 +18,7 @@
                         </tr>
                         <tr style="height:40px;">
                             <td rowspan="4" style="width:40px;"><img src="./logo.jpeg" width="115px" height="115px"></td>
-                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">Royalpupil International School
+                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">ROYALPUPIL INTERNATIONAL SCHOOL
                             </th>
                         <tr style="height:30px;">
                             <td colspan="2">
@@ -157,7 +157,7 @@
                         </tr>
                         <tr style="height:40px;">
                         <td rowspan="4" style="width:40px;"><img src="./logo.jpeg" width="115px" height="115px"></td>
-                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">Royalpupil International School
+                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">ROYALPUPIL INTERNATIONAL SCHOOL
                             </th>
                         <tr style="height:30px;">
                             <td colspan="2">
