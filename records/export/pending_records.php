@@ -46,7 +46,7 @@
                     <th>CLASS</th>
                     <th>GENDER</th>
                     <?php if ($payment_types == 1 or $payment_types == 0) { ?>
-                        <th>SCHOOL FEES BALANCE</th>
+                        <th>TUITION FEES BALANCE</th>
                     <?php } ?>
                     <?php if ($payment_types == 2 or $payment_types == 0) { ?>
                         <th>BOOKS FEES BALANCE</th>

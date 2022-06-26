@@ -48,7 +48,7 @@
                                                 <div class="col-sm-7">
                                                     <select class="form-control" name="payment_types">
                                                         <option value="0"> All Payments </option>
-                                                        <option value='1'>School Payments</option>
+                                                        <option value='1'>Tuition Payments</option>
                                                         <option value='2'>Books Payments</option>
                                                         <option value='3'>Dress Payments</option>
                                                         <option value='4'>Transport Payments</option>

@@ -37,7 +37,7 @@
                                                 <div class="col-sm-7">
                                                     <select class="form-control" name="payment_types">
                                                         <option value="0">All Pending Payments </option>
-                                                        <option value='1'>School Pending Payments</option>
+                                                        <option value='1'>Tuition Pending Payments</option>
                                                         <option value='2'>Books Pending Payments</option>
                                                         <option value='3'>Dress Pending Payments</option>
                                                         <option value='4'>Transport Pending Payments</option>

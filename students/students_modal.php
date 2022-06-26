@@ -330,7 +330,7 @@
                                     <th style="padding: 10px;">BALANCE</th>
                                 </tr>
                                 <tr>
-                                    <th style="padding: 5px;">SCHOOL FEE</th>
+                                    <th style="padding: 5px;">TUITION FEE</th>
                                     <td style="padding: 5px;"> <span id="view_students_total_school_fee"></span></td>
                                     <td style="padding: 5px;"><span id="view_student_total_school_fee_paid"></span></td>
                                     <td style="padding: 5px;"> <span id="view_students_total_school_fee_balance"></span></td>

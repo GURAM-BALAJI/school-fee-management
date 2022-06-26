@@ -53,6 +53,6 @@
 	}
 }
 
-	header('location: ../home/home.php');
+	header('location: ../home/');
 
 ?>

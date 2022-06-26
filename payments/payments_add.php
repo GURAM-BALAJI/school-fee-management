@@ -35,11 +35,16 @@ if (isset($_POST['add'])) {
 		}
 
 		date_default_timezone_set('Asia/Kolkata');
-		$now = date('d-m-Y h:i:s a');
+		$now = date('d-m-Y h:i:s');
 		$today = date('d-m-Y');
 		$stmt = $conn->prepare("INSERT INTO payments (payment_through,payments_students_id,payments_type,payments_fee,payments_created_date,payments_by,payments_date) VALUES (:payment_through,:payments_students_id,:payments_type,:payments_fee,:payments_created_date,:payments_by,:payments_date)");
 		$stmt->execute(['payment_through' => $payment_through, 'payments_students_id' => $student_id, 'payments_type' => $fees_type, 'payments_fee' => $pay, 'payments_created_date' => $now, 'payments_by' => $by, 'payments_date' => $today]);
-		$_SESSION['success'] = 'Payment added successfully';
+		$stmt_id = $conn->prepare("SELECT payments_id FROM payments WHERE payments_created_date='$now' AND payments_by = $by");
+		$stmt_id->execute();
+		foreach ($stmt_id as $row_id){
+			header('location: payments_printing.php?payment_id=' . $row_id['payments_id']);
+			exit();
+		}
 	} catch (PDOException $e) {
 		$_SESSION['error'] = $e->getMessage();
 	}

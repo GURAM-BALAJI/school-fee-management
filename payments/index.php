@@ -27,6 +27,7 @@
             <li>Payments</li>
             <li class="active">Payments</li>
           </ol>
+
         </section>
 
         <!-- Main content -->
@@ -53,8 +54,21 @@
             unset($_SESSION['success']);
           }
           ?>
+
           <div class="panel panel-default" style="overflow-x:auto;">
             <div class="row">
+              <form action="" method="POST">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <input type="date" class="form-control" name="date">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="submit" class="btn btn-primary btn-flat" value="Submit">
+                    </div>
+                  </div>
+                </div>
+              </form>
               <div class="col-xs-12">
                 <div class="box">
                   <?php if ($admin['payments_create']) { ?>
@@ -83,7 +97,10 @@
 
                         try {
                           date_default_timezone_set('Asia/Kolkata');
-                          $today = date('d-m-Y');
+                          if (isset($_POST['date']))
+                            $today =  date('d-m-Y', strtotime($_POST['date']));
+                          else
+                            $today = date('d-m-Y');
                           $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_date='$today' order by payments_id DESC");
                           $stmt->execute();
                           $slno = 1;
@@ -96,7 +113,7 @@
                               echo "<td>" . $row1['students_name'] . " ( " . $row1['students_id'] . " )</td>";
                             echo "<td>";
                             if ($row['payments_type'] == '1')
-                              echo "School Fee";
+                              echo "Tuition Fee";
                             elseif ($row['payments_type'] == '2')
                               echo "Books Fee";
                             elseif ($row['payments_type'] == '3')
@@ -124,10 +141,11 @@
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
                               echo "<td>" . $row1['admin_name'] . " ( " . $row1['admin_id'] . " )</td>";
-
+                            echo "<td>";
+                            echo "<a href='payments_printing.php?payment_id=" . $row['payments_id'] . "'><button class='btn btn-success btn-sm btn-flat' ><i class='fa fa-print'></i> PRINT</button></a>";
                             if ($admin['payments_del'])
-                              echo "<td><button class='btn btn-warning btn-sm roll_back btn-flat' data-id='" . $row['payments_id'] . "'><i class='fa fa-undo'></i> Roll Back</button></td>";
-
+                              echo " <button class='btn btn-warning btn-sm roll_back btn-flat' data-id='" . $row['payments_id'] . "'><i class='fa fa-undo'></i> Roll Back</button>";
+                            echo "</td>";
                             echo "</tr>
                         ";
                           }

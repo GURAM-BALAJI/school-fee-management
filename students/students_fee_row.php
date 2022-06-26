@@ -16,13 +16,13 @@ if (isset($_POST['id'])) {
 		<td style='padding: 5px;'>" . $slno++ . "</td>
 		<td style='padding: 5px;'>" . $row['payments_id'] . "</td>";
 		if ($row['payments_type'] == '1')
-			$fee_view .= "<td style='padding: 5px;'>School Fee</td>";
+			$fee_view .= "<td style='padding: 5px;'>Tuition Fees</td>";
 		elseif ($row['payments_type'] == '2')
-			$fee_view .= "<td style='padding: 5px;'>Books Fee</td>";
+			$fee_view .= "<td style='padding: 5px;'>Books Fees</td>";
 		elseif ($row['payments_type'] == '3')
-			$fee_view .= "<td style='padding: 5px;'>Dress Fee</td>";
+			$fee_view .= "<td style='padding: 5px;'>Dress Fees</td>";
 		elseif ($row['payments_type'] == '4')
-			$fee_view .= "<td style='padding: 5px;'>Transport Fee</td>";
+			$fee_view .= "<td style='padding: 5px;'>Transport Fees</td>";
 		$fee_view .= "<td style='padding: 5px;'>".$row['payments_fee']."</td>";
 		$fee_view .="<td style='padding: 5px;'>";
 		if ($row['payment_through'] == '1')

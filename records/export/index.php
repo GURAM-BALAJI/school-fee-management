@@ -65,13 +65,13 @@
                   echo "<td>" . $row1['students_name'] . " ( " . $row1['students_id'] . " )</td>";
                 echo "<td>";
                 if ($row['payments_type'] == '1')
-                  echo "School Fee";
+                  echo "Tuition Fees";
                 elseif ($row['payments_type'] == '2')
-                  echo "Books Fee";
+                  echo "Books Fees";
                 elseif ($row['payments_type'] == '3')
-                  echo "Dress Fee";
+                  echo "Dress Fees";
                 elseif ($row['payments_type'] == '4')
-                  echo "Transport Fee";
+                  echo "Transport Fees";
                 echo "</td>";
                 $total += $row['payments_fee'];
                 echo "<td>" . $row['payments_fee'] . "</td>";

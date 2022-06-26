@@ -68,7 +68,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-money"></i>
                 </div>
-                <a href="../payments/payments.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../payments/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
@@ -90,7 +90,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-users"></i>
                 </div>
-                <a href="../students/students.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../students/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
@@ -118,7 +118,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-grav"></i>
                 </div>
-                <a href="../admin/admin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../admin/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
@@ -141,7 +141,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-signal"></i>
                 </div>
-                <a href="../classes_and_fee/classes_and_fee.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../classes_and_fee/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>

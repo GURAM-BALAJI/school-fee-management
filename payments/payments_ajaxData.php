@@ -13,21 +13,21 @@ if (isset($_POST["student_id"]) && !empty($_POST["student_id"])) {
         echo "<option disabled selected> Select Payment </option>";
         foreach ($data as $row) {
             if ($row['students_total_school_fee'] != 0)
-                echo "<option value='1'>School Fee, Total: " . $row['students_total_school_fee'] . ' Balance:' . $row['students_total_school_fee_balance'] . "</option>";
+                echo "<option value='1'>Tuition Fees, Total: " . $row['students_total_school_fee'] . ' Balance:' . $row['students_total_school_fee_balance'] . "</option>";
             else
-                echo "<option value='1'>School Fee</option>";
+                echo "<option value='1'>Tuition Fees</option>";
             if ($row['students_total_books_fee'] != 0)
-                echo "<option value='2'>Books Fee, Total: " . $row['students_total_books_fee'] . ' Balance:' . $row['students_total_books_fee_balance'] . "</option>";
+                echo "<option value='2'>Books Fees, Total: " . $row['students_total_books_fee'] . ' Balance:' . $row['students_total_books_fee_balance'] . "</option>";
             else
-                echo "<option value='2'>Books Fee</option>";
+                echo "<option value='2'>Books Fees</option>";
             if ($row['students_total_dress_fee'] != 0)
-                echo "<option value='3'>Dress Fee, Total: " . $row['students_total_dress_fee'] . ' Balance:' . $row['students_total_dress_fee_balance'] . "</option>";
+                echo "<option value='3'>Dress Fees, Total: " . $row['students_total_dress_fee'] . ' Balance:' . $row['students_total_dress_fee_balance'] . "</option>";
             else
-                echo "<option value='3'>Dress Fee</option>";
+                echo "<option value='3'>Dress Fees</option>";
             if ($row['students_total_transport_fee'] != 0)
-                echo "<option value='4'>Transport Fee, Total: " . $row['students_total_transport_fee'] . ' Balance:' . $row['students_total_transport_fee_balance'] . "</option>";
+                echo "<option value='4'>Transport Fees, Total: " . $row['students_total_transport_fee'] . ' Balance:' . $row['students_total_transport_fee_balance'] . "</option>";
             else
-                echo "<option value='4'>Transport Fee</option>";
+                echo "<option value='4'>Transport Fees</option>";
         }
     } else {
         echo "Not Found..!";

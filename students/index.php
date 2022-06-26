@@ -64,12 +64,12 @@
                                             <th>NAME</th>
                                             <th>CLASS</th>
                                             <th>GENDER</th>
-                                            <th>SCHOOL FEES BALANCE</th>
+                                            <th>TUITION FEES BALANCE</th>
                                             <th>BOOKS FEES BALANCE</th>
                                             <th>DRESS FEES BALANCE</th>
                                             <th>TRANSPORT FEES BALANCE</th>
                                             <th>TOTAL BALANCE</th>
-                                            <th>TOOLS</th>
+                                            <th>TOOLS_AND_FEE_HISTORY</th>
                                         </thead>
                                         <tbody>
                                             <?php
