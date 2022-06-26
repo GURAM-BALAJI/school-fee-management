@@ -50,6 +50,7 @@ if (isset($_POST['id'])) {
 		'students_id' => $row['students_id'],
 		'students_name' => $row['students_name'],
 		'students_DOB' => $row['students_DOB'],
+		'students_religion'=>$row['students_religion'],
 		'students_cast' => $row['students_cast'],
 		'students_mother_tongue' => $row['students_mother_tongue'],
 		'students_blood_group' => $row['students_blood_group'],

@@ -8,6 +8,7 @@ if ($req_per == 1) {
 		$classes_and_fee_value = $_POST['classes_and_fee_value'];
 		$students_DOB = $_POST['students_DOB'];
 		$students_gender = $_POST['students_gender'];
+		$students_religion = strtoupper($_POST['students_religion']);
 		$students_cast = strtoupper($_POST['students_cast']);
 		$students_mother_tongue = strtoupper($_POST['students_mother_tongue']);
 		$students_blood_group = $_POST['students_blood_group'];
@@ -32,6 +33,7 @@ if ($req_per == 1) {
 			students_class=:students_class,
 			students_DOB=:students_DOB,
 			students_gender=:students_gender,
+			students_religion=:students_religion,
 			students_cast=:students_cast,
 			students_mother_tongue=:students_mother_tongue,
 			students_blood_group=:students_blood_group,
@@ -51,6 +53,7 @@ if ($req_per == 1) {
 				'students_class' => $classes_and_fee_value,
 				'students_DOB' => $students_DOB,
 				'students_gender' => $students_gender,
+				'students_religion'=>$students_religion,
 				'students_cast' => $students_cast,
 				'students_mother_tongue' => $students_mother_tongue,
 				'students_blood_group' => $students_blood_group,

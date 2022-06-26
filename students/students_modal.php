@@ -59,6 +59,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="students_religion" class="col-sm-4 control-label">Religion</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="students_religion">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="students_cast" class="col-sm-4 control-label">Caste</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_cast">
@@ -183,6 +191,13 @@
                         <label for="students_gender" class="col-sm-4 control-label">Gender</label>
                         <div class="col-sm-8">
                             <span id="edit_students_gender"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="students_religion" class="col-sm-4 control-label">Religion</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="edit_students_religion" class="form-control" name="students_religion">
                         </div>
                     </div>
 
@@ -363,81 +378,86 @@
                             <span id="view_students_DOB"></span>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label for="students_cast" class="col-sm-4 control-label">Caste : </label>
+                        <label for="view_students_religion" class="col-sm-4 control-label">Religion : </label>
+                        <div class="col-sm-8">
+                            <span id="view_students_religion"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="view_students_cast" class="col-sm-4 control-label">Caste : </label>
                         <div class="col-sm-8">
                             <span id="view_students_cast"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue : </label>
+                        <label for="view_students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_tongue"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_blood_group" class="col-sm-4 control-label">Blood Group : </label>
+                        <label for="view_students_blood_group" class="col-sm-4 control-label">Blood Group : </label>
                         <div class="col-sm-8">
                             <span id="view_students_blood_group"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_adher" class="col-sm-4 control-label">Aadhaar No : </label>
+                        <label for="view_students_adher" class="col-sm-4 control-label">Aadhaar No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_adher"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_address" class="col-sm-4 control-label">Address : </label>
+                        <label for="view_students_address" class="col-sm-4 control-label">Address : </label>
                         <div class="col-sm-8">
                             <span id="view_students_address"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_name" class="col-sm-4 control-label">Father's Name : </label>
+                        <label for="view_students_father_name" class="col-sm-4 control-label">Father's Name : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_name"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_phone" class="col-sm-4 control-label">Father's Phone No : </label>
+                        <label for="view_students_father_phone" class="col-sm-4 control-label">Father's Phone No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_phone"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_father_occupation" class="col-sm-4 control-label">Father's Occupation : </label>
+                        <label for="view_students_father_occupation" class="col-sm-4 control-label">Father's Occupation : </label>
                         <div class="col-sm-8">
                             <span id="view_students_father_occupation"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_name" class="col-sm-4 control-label">Mother's Name : </label>
+                        <label for="view_students_mother_name" class="col-sm-4 control-label">Mother's Name : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_name"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_phone" class="col-sm-4 control-label">Mother's Phone No : </label>
+                        <label for="view_students_mother_phone" class="col-sm-4 control-label">Mother's Phone No : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_phone"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label">Mother's Occupation : </label>
+                        <label for="view_students_mother_occupation" class="col-sm-4 control-label">Mother's Occupation : </label>
                         <div class="col-sm-8">
                             <span id="view_students_mother_occupation"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label"> Last Updated date : </label>
+                        <label for="view_students_updated_date" class="col-sm-4 control-label"> Last Updated date : </label>
                         <div class="col-sm-8">
                             <span id="view_students_updated_date"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="students_mother_occupation" class="col-sm-4 control-label">Created Date : </label>
+                        <label for="view_students_created_date" class="col-sm-4 control-label">Created Date : </label>
                         <div class="col-sm-8">
                             <span id="view_students_created_date"></span>
                         </div>

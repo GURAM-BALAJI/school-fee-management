@@ -41,6 +41,7 @@ $students_gender.= "<option value='0'>Male</option>";
 		'students_name' =>  $row['students_name'],
 		'students_gender' => $students_gender,
 		'students_class' =>  $students_class,
+		'students_religion'=>$row['students_religion'],
 		'students_cast' =>  $row['students_cast'],
 		'students_mother_tongue' =>  $row['students_mother_tongue'],
 		'students_blood_group' =>  $row['students_blood_group'],

@@ -38,6 +38,7 @@
                     <th>CLASS</th>
                     <th>GENDER</th>
                     <th>DOB</th>
+                    <th>RELIGION</th>
                     <th>CAST</th>
                     <th>MOTHER TONGUE</th>
                     <th>BLOOD GROUP</th>
@@ -84,6 +85,7 @@
                                 echo "Others";
                             echo "</td>";
                             echo "<td>" . $row['students_DOB'] . "</td>";
+                            echo "<td>" . $row['students_religion'] . "</td>";
                             echo "<td>" . $row['students_cast'] . "</td>";
                             echo "<td>" . $row['students_mother_tongue'] . "</td>";
                             echo "<td>" . $row['students_blood_group'] . "</td>";

@@ -219,6 +219,7 @@
                         $('#edit_students_gender').html(response.students_gender);
                         $('#edit_students_DOB').val(response.students_DOB);
                         $('#edit_students_class').html(response.students_class);
+                        $('#edit_students_religion').val(response.students_religion);
                         $('#edit_students_cast').val(response.students_cast);
                         $('#edit_students_mother_tongue').val(response.students_mother_tongue);
                         $('#edit_students_blood_group').val(response.students_blood_group);
@@ -250,6 +251,7 @@
                         $('.delete_students_id_view').html(response.students_id);
                         $('#view_students_name').html(response.students_name);
                         $('#view_students_DOB').html(response.students_DOB);
+                        $('#view_students_religion').html(response.students_religion);
                         $('#view_students_cast').html(response.students_cast);
                         $('#view_students_mother_tongue').html(response.students_mother_tongue);
                         $('#view_students_blood_group').html(response.students_blood_group);
