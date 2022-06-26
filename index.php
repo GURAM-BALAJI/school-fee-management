@@ -10,7 +10,7 @@ if (isset($_SESSION['never_admin']))
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=0.70">
   <meta charset="utf-8">
-  <title>Royalpupil International School</title>
+  <title>Royalpupil  School</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon.jpeg">
   <link rel='stylesheet' href='./loginscripts/index-bootstrap.min.css'>
   <link rel="stylesheet" href="./loginscripts/style.css">
