@@ -64,7 +64,7 @@
                       <input type="date" class="form-control" name="date">
                     </div>
                     <div class="col-sm-4">
-                      <input type="submit" class="btn btn-primary btn-flat" value="Submit">
+                      <input type="submit" name="submit" class="btn btn-primary btn-flat" value="Submit">
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@
 
                         try {
                           date_default_timezone_set('Asia/Kolkata');
-                          if (isset($_POST['date']))
+                          if (isset($_POST['submit']))
                             $today =  date('d-m-Y', strtotime($_POST['date']));
                           else
                             $today = date('d-m-Y');
@@ -237,6 +237,10 @@
             $('#payment_id').val(response.payments_id);
           }
         });
+      }
+
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
       }
     </script>
   </body>

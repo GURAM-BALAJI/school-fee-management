@@ -8,7 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- jQuery -->
-
+    <title>Royalpupil International School</title>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpeg">
 </head>
 
 <body>
@@ -58,12 +59,12 @@
                         if ($classes_and_fee_value == 0 &&  $students_gender == 3)
                             $stmt = $conn->prepare("SELECT * FROM students WHERE students_deleted='0'");
                         if ($classes_and_fee_value != 0 &&  $students_gender == 3)
-                        $stmt = $conn->prepare("SELECT * FROM students WHERE students_class='$classes_and_fee_value' AND students_deleted='0'");
+                            $stmt = $conn->prepare("SELECT * FROM students WHERE students_class='$classes_and_fee_value' AND students_deleted='0'");
                         if ($classes_and_fee_value == 0 &&  $students_gender != 3)
-                        $stmt = $conn->prepare("SELECT * FROM students WHERE students_gender='$students_gender' AND students_deleted='0'");
+                            $stmt = $conn->prepare("SELECT * FROM students WHERE students_gender='$students_gender' AND students_deleted='0'");
                         if ($classes_and_fee_value != 0 &&  $students_gender != 3)
-                        $stmt = $conn->prepare("SELECT * FROM students WHERE students_gender='$students_gender' AND students_class='$classes_and_fee_value' AND students_deleted='0'");
-                            $stmt->execute();
+                            $stmt = $conn->prepare("SELECT * FROM students WHERE students_gender='$students_gender' AND students_class='$classes_and_fee_value' AND students_deleted='0'");
+                        $stmt->execute();
                         $slno = 1;
                         foreach ($stmt as $row) {
                             echo "<tr>";
