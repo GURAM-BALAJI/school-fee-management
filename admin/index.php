@@ -1,4 +1,4 @@
-<?php include '../includes/session.php'; ?>
+<?php include '../session.php'; ?>
 <?php include '../includes/header.php';?>
 <?php if($admin['admin_view']){?>
 <body class="hold-transition skin-blue sidebar-mini">

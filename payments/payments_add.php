@@ -1,5 +1,5 @@
 <?php
-include '../includes/session.php';
+include '../session.php';
 
 if (isset($_POST['add'])) {
 	$student_id = $_POST['student_id'];

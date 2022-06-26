@@ -1,12 +1,11 @@
-<?php include '../includes/session.php'; ?>
+<?php include '../session.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php if ($admin['payments_view']) { ?>
-
   <head>
     <script src='jquery-3.2.1.min.js' type='text/javascript'></script>
-    <script src='select2/dist/js/select2.min.js' type='text/javascript'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <link href='select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
+    <script src='select/select2.min.js' type='text/javascript'></script>
+
+    <link href='select/select2.min.css' rel='stylesheet' type='text/css'>
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">

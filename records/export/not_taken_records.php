@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../../includes/session.php';
+    <?php include '../../session.php';
     if (isset($_POST['submit'])) {
         date_default_timezone_set('Asia/Kolkata');
         $payment_types = $_POST['payment_types'];

@@ -1,4 +1,4 @@
-<?php include '../includes/session.php'; ?>
+<?php include '../session.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php if ($admin['classes_and_fee_view']) { ?>
 

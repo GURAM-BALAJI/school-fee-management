@@ -1,5 +1,5 @@
 <?php
-	include '../includes/session.php';
+	include '../session.php';
 	include '../includes/req_start.php';
 	if($req_per==1){
 	if(isset($_POST['delete'])){

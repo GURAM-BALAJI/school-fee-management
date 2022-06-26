@@ -1,5 +1,5 @@
 <?php
-include 'includes/session.php';
+include 'session2.php';
 if (isset($_SESSION['never_admin']))
   header('location: home/');
 ?>

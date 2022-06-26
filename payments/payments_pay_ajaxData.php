@@ -1,6 +1,6 @@
 <?php
 //Include database configuration file
-include '../includes/session.php';
+include '../session.php';
 
 if (isset($_POST["student_id"]) && !empty($_POST["student_id"]) && isset($_POST["fees_type"]) && !empty($_POST["fees_type"])) {
     $student_id = $_POST["student_id"];
