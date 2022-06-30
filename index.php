@@ -27,7 +27,7 @@ if (isset($_SESSION['rpis_admin']))
         <div class="controls">
           <input type="text" name="email" placeholder="Username" class="form-control" required />
           <br>
-          
+
           <input type="password" name="password" placeholder="Password" class="form-control" required />
           <br>
           <?php
@@ -44,6 +44,11 @@ if (isset($_SESSION['rpis_admin']))
         </div>
       </div>
     </div>
+    <a href="www.7softsolution.com">
+    <div style="padding:0px 5% 2%;position: fixed;text-align: right;bottom: 0px;width: 100%;color:lightGreen;z-index:100;">
+      <h3>Developed By: 7 Soft Solution</h3>
+    </div>
+  </a>
     <div id="particles-js"></div>
     <!-- partial -->
     <script src='./loginscripts/index-jquery-1.11.1.min.js'></script>
