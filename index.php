@@ -51,7 +51,7 @@ if (isset($_SESSION['rpis_admin']))
     <script src="./loginscripts/script.js"></script>
 
   </form>
-  <a href="www.7softsolution.com">
+  <a href="http://7softsolution.com/">
     <div style="padding:0px 5% 2%;position: fixed;text-align: right;bottom: 0px;width: 100%;color:lightGreen;z-index:100;">
       <h3>Developed By: 7 Soft Solution</h3>
     </div>
