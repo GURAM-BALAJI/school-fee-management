@@ -1,7 +1,7 @@
 <?php
 $conn = $pdo->open();
 try {
-    $never_id_admin = $_SESSION['never_id_admin'];
+    $never_id_admin = $_SESSION['rpis_id_admin'];
     $stmtreq = $conn->prepare("SELECT admin_req FROM admin WHERE admin_id = $never_id_admin");
     $stmtreq->execute();
     foreach ($stmtreq as $rowreq) {

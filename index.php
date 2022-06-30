@@ -1,6 +1,6 @@
 <?php
 include 'session2.php';
-if (isset($_SESSION['never_admin']))
+if (isset($_SESSION['rpis_admin']))
   header('location: home/');
 ?>
 <!DOCTYPE html>
