@@ -35,7 +35,7 @@
       </div>
       <table id="dataTable" class="table table-striped">
         <thead>
-          <th>SLNO</th>
+          <th>SL NO.</th>
           <th>Payment ID</th>
           <th>Student</th>
           <th>Type</th>
@@ -60,10 +60,10 @@
               foreach ($stmt as $row) {
                 echo  "<td>" . $slno++ . "</td>";
                 echo  "<td>" . $row['payments_id'] . "</td>";
-                $stmt1 = $conn->prepare("SELECT students_id,students_name FROM students WHERE students_id='" . $row['payments_students_id'] . "'");
+                $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id='" . $row['payments_students_id'] . "'");
                 $stmt1->execute();
                 foreach ($stmt1 as $row1)
-                  echo "<td>" . $row1['students_name'] . " ( " . $row1['students_id'] . " )</td>";
+                  echo "<td>" . $row1['students_name'] . " ( " . $row1['students_regestration_no'] . " )</td>";
                 echo "<td>";
                 if ($row['payments_type'] == '1')
                   echo "Tuition Fees";

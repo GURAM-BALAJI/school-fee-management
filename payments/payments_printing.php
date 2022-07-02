@@ -47,12 +47,12 @@
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
-                    <?php $stmt1 = $conn->prepare("SELECT students_id,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
+                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
                     $stmt1->execute();
                     foreach ($stmt1 as $row1) { ?>
                         <tr style="height:30px;">
                             <td colspan="2">Student Name: <?php echo $row1['students_name']; ?></td>
-                            <td>Student ID: <?php echo $row1['students_id']; ?></td>
+                            <td>SATS ID: <?php echo $row1['students_regestration_no']; ?></td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">Father Name: <?php echo $row1['students_father_name']; ?></td>
@@ -186,12 +186,12 @@
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
-                    <?php $stmt1 = $conn->prepare("SELECT students_id,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
+                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
                     $stmt1->execute();
                     foreach ($stmt1 as $row1) { ?>
                         <tr style="height:30px;">
                             <td colspan="2">Student Name: <?php echo $row1['students_name']; ?></td>
-                            <td>Student ID: <?php echo $row1['students_id']; ?></td>
+                            <td>SATS ID: <?php echo $row1['students_regestration_no']; ?></td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">Father Name: <?php echo $row1['students_father_name']; ?></td>

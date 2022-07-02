@@ -32,8 +32,8 @@
             </div>
             <table id="dataTable" class="table table-striped">
                 <thead>
-                    <th>SLNO</th>
-                    <th>STUDENT ID</th>
+                    <th>SL NO.</th>
+                    <th>SATS ID</th>
                     <th>NAME</th>
                     <th>CLASS</th>
                     <th>GENDER</th>
@@ -70,7 +70,7 @@
                         foreach ($stmt as $row) {
                             echo "<tr>";
                             echo "<td>" . $slno++ . "</td>";
-                            echo "<td>" . $row['students_id'] . "</td>";
+                            echo "<td>" . $row['students_regestration_no'] . "</td>";
                             echo "<td>" . $row['students_name'] . "</td>";
                             $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_value='" . $row['students_class'] . "'");
                             $stmt1->execute();

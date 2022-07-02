@@ -18,7 +18,7 @@
                                 $stmt1 = $conn->prepare("SELECT * FROM students");
                                 $stmt1->execute();
                                 foreach ($stmt1 as $row1)
-                                    echo "<option value='" . $row1['students_id'] . "'>" . $row1['students_name'] . " ( " . $row1['students_id'] ." ), Father : " . $row1['students_father_name'] . ", Mother : " . $row1['students_mother_name'] ."</option>";
+                                    echo "<option value='" . $row1['students_id'] . "'>" . $row1['students_name'] . " ( " . $row1['students_regestration_no'] ." ), Father : " . $row1['students_father_name'] . ", Mother : " . $row1['students_mother_name'] ."</option>";
                                 ?>
                             </select>
                         </div>

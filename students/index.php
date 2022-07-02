@@ -58,11 +58,11 @@
                                     <div class="box-body">
                                         <table id="example1" class="table table-bordered">
                                             <thead>
-                                                <th>ID</th>
+                                                <th>SL NO.</th>
+                                                <th>SATS ID</th>
                                                 <th>PHOTO</th>
                                                 <th>NAME</th>
                                                 <th>CLASS</th>
-                                                <th>GENDER</th>
                                                 <th>TUITION FEES BALANCE</th>
                                                 <th>BOOKS FEES BALANCE</th>
                                                 <th>DRESS FEES BALANCE</th>
@@ -76,10 +76,12 @@
                                                 try {
                                                     $stmt = $conn->prepare("SELECT * FROM students WHERE students_deleted='0'");
                                                     $stmt->execute();
+                                                    $slno=1;
                                                     foreach ($stmt as $row) {
                                                         $image = (!empty($row['students_photo'])) ? '../students_photo/' . $row['students_photo'] : '../students_photo/no-image.png';
                                                         echo "<tr>";
-                                                        echo "<td>" . $row['students_id'] . "</td>";
+                                                        echo "<td>" . $slno++. "</td>";
+                                                        echo "<td>" . $row['students_regestration_no'] . "</td>";
                                                         echo "<td><a href='students_full_image_view.php?image=" . $image . "'> <img src='" . $image . "' height='30px' width='30px'></a> ";
                                                         if ($admin['students_edit'])
                                                             echo " <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='" . $row['students_id'] . "'><i class='fa fa-edit'></i></a></span></td>";
@@ -90,14 +92,7 @@
                                                         foreach ($stmt1 as $row1)
                                                             echo $row1['classes_and_fee_class'];
                                                         echo "</td>";
-                                                        echo "<td>";
-                                                        if ($row['students_gender'] == '0')
-                                                            echo "Male";
-                                                        elseif ($row['students_gender'] == '1')
-                                                            echo "Female";
-                                                        else
-                                                            echo "Others";
-                                                        echo "</td>";
+                                                       
                                                         echo "<td>";
                                                         if ($row['students_total_school_fee'] == 0)
                                                             echo "&#10060;";
@@ -216,6 +211,7 @@
                     success: function(response) {
                         $('#edit_students_id').val(response.students_id);
                         $('#edit_students_name').val(response.students_name);
+                        $('#edit_students_regestration_no').val(response.students_regestration_no);
                         $('#edit_students_gender').html(response.students_gender);
                         $('#edit_students_DOB').val(response.students_DOB);
                         $('#edit_students_class').html(response.students_class);
@@ -248,8 +244,9 @@
                         $('.students_photo_id').val(response.students_id);
                         $('.delete_students_id').val(response.students_id);
                         $('.delete_students_name').html(response.students_name);
-                        $('.delete_students_id_view').html(response.students_id);
+                        $('.delete_students_id_view').html(response.students_regestration_no);
                         $('#view_students_name').html(response.students_name);
+                        $('#view_students_gender').html(response.students_gender);
                         $('#view_students_DOB').html(response.students_DOB);
                         $('#view_students_religion').html(response.students_religion);
                         $('#view_students_cast').html(response.students_cast);

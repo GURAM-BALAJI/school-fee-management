@@ -4,6 +4,7 @@ include '../includes/req_start.php';
 if ($req_per == 1) {
 	if (isset($_POST['edit'])) {
 		$id = $_POST['id'];
+		$students_regestration_no = strtoupper($_POST['students_regestration_no']);
 		$name = strtoupper($_POST['name']);
 		$classes_and_fee_value = $_POST['classes_and_fee_value'];
 		$students_DOB = $_POST['students_DOB'];
@@ -27,7 +28,9 @@ if ($req_per == 1) {
 			$classes_and_fee_fee = $row1['classes_and_fee_fee'];
 			date_default_timezone_set('Asia/Kolkata');
 			$today = date('d-m-Y h:i:s a');
-			$stmt = $conn->prepare("UPDATE students SET students_total_school_fee=:students_total_school_fee,
+			$stmt = $conn->prepare("UPDATE students SET 
+			students_regestration_no=:students_regestration_no,
+			students_total_school_fee=:students_total_school_fee,
 			students_total_school_fee_balance=:students_total_school_fee_balance,
 			students_name=:students_name,
 			students_class=:students_class,
@@ -47,6 +50,7 @@ if ($req_per == 1) {
 			students_address=:students_address,
 			students_updated_date=:students_updated_date WHERE students_id=:id");
 			$stmt->execute([
+				'students_regestration_no'=>$students_regestration_no,
 				'students_total_school_fee'=>$classes_and_fee_fee,
 				'students_total_school_fee_balance'=>$classes_and_fee_fee,
 				'students_name' => $name,

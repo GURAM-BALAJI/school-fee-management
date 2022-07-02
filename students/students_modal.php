@@ -9,7 +9,13 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" method="POST" action="students_add.php" enctype="multipart/form-data">
-
+                
+                <div class="form-group">
+                        <label for="students_regestration_no" class="col-sm-4 control-label">SATS ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="students_regestration_no" required autocomplete="OFF">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-4 control-label">Full Name</label>
                         <div class="col-sm-8">
@@ -74,7 +80,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother's Tongue</label>
+                        <label for="students_mother_tongue" class="col-sm-4 control-label">Mother Tongue</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="students_mother_tongue" required>
                         </div>
@@ -165,6 +171,13 @@
             <div class="modal-body">
                 <form class="form-horizontal" method="POST" action="students_edit.php">
                     <input type="hidden" id="edit_students_id" name="id">
+
+                    <div class="form-group">
+                        <label for="students_regestration_no" class="col-sm-4 control-label">SATS ID</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="edit_students_regestration_no" name="students_regestration_no" required autocomplete="OFF">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label for="name" class="col-sm-4 control-label">Full Name</label>
@@ -370,6 +383,13 @@
                                 </tr>
                             </table>
                             </center>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="view_students_gender" class="col-sm-4 control-label">Gender : </label>
+                        <div class="col-sm-8">
+                            <span id="view_students_gender"></span>
                         </div>
                     </div>
                     <div class="form-group">

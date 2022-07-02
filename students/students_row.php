@@ -46,11 +46,19 @@ if (isset($_POST['id'])) {
 		$student_total_transport_fee_paid_balance = $row['students_total_transport_fee_balance'];
 		$student_total_transport_fee_paid = $row['students_total_transport_fee'] - $row['students_total_transport_fee_balance'];
 	}
+	if ($row['students_gender'] == '0')
+		$gender = "Male";
+	elseif ($row['students_gender'] == '1')
+		$gender = "Female";
+	else
+		$gender = "Others";
 	$row = array(
+		'students_regestration_no'=>$row['students_regestration_no'],
 		'students_id' => $row['students_id'],
 		'students_name' => $row['students_name'],
+		'students_gender'=>$gender,
 		'students_DOB' => $row['students_DOB'],
-		'students_religion'=>$row['students_religion'],
+		'students_religion' => $row['students_religion'],
 		'students_cast' => $row['students_cast'],
 		'students_mother_tongue' => $row['students_mother_tongue'],
 		'students_blood_group' => $row['students_blood_group'],
