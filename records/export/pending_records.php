@@ -34,8 +34,6 @@
                     <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a class="dataExport" data-type="excel">Excel</a></li>
-                        <li><a class="dataExport" data-type="csv">CSV</a></li>
-                        <li><a class="dataExport" data-type="txt">Text</a></li>
                     </ul>
                 </div>
             </div>

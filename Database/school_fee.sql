@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 08:35 PM
+-- Generation Time: Jul 02, 2022 at 12:19 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.1.30
 
@@ -67,7 +67,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`, `admin_name`, `admin_phone`, `admin_photo`, `admin_status`, `students_view`, `students_create`, `students_edit`, `students_del`, `admin_view`, `admin_create`, `admin_edit`, `admin_del`, `classes_and_fee_view`, `classes_and_fee_create`, `classes_and_fee_edit`, `classes_and_fee_del`, `payments_view`, `payments_create`, `payments_del`, `payments_records_view`, `payment_pending_records_view`, `students_records_view`, `not_taken_records_view`, `admin_special`, `admin_delete`, `admin_added_date`, `admin_updated_date`, `admin_req`) VALUES
-(6, 'royalpupilinternationalschool@gmail.com', '$2y$10$J4MjShk1Hzt8wURhXI6C7eUL4tHLAMt35LtkXp/llP9p/1cVkM15q', 'ADMIN', 9845138636, '2022-06-25_1656181074.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-06-25 18:29:23', 0);
+(6, 'royalpupilinternationalschool@gmail.com', '$2y$10$IUHcsSNbUjp1W.9wG76dZ.YI.wXYIhOWzgwf.hun/0Xp2gGgiUjWC', 'ADMIN', 9845138636, '2022-06-26_1656253258.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-07-02 09:44:09', 0);
 
 -- --------------------------------------------------------
 
@@ -109,11 +109,13 @@ CREATE TABLE `payments` (
 
 CREATE TABLE `students` (
   `students_id` bigint(20) NOT NULL,
+  `students_regestration_no` varchar(25) NOT NULL,
   `students_name` varchar(500) NOT NULL,
   `students_class` int(11) NOT NULL,
   `students_photo` varchar(250) DEFAULT NULL,
   `students_DOB` date DEFAULT NULL,
   `students_gender` set('0','1','2') NOT NULL,
+  `students_religion` varchar(20) NOT NULL,
   `students_cast` varchar(20) DEFAULT NULL,
   `students_mother_tongue` varchar(20) NOT NULL,
   `students_blood_group` varchar(5) DEFAULT NULL,

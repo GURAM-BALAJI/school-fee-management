@@ -28,21 +28,19 @@
           <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
           <ul class="dropdown-menu" role="menu">
             <li><a class="dataExport" data-type="excel">Excel</a></li>
-            <li><a class="dataExport" data-type="csv">CSV</a></li>
-            <li><a class="dataExport" data-type="txt">Text</a></li>
           </ul>
         </div>
       </div>
       <table id="dataTable" class="table table-striped">
         <thead>
           <th>SL NO.</th>
-          <th>Payment ID</th>
-          <th>Student</th>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Through</th>
-          <th>Created Date</th>
-          <th>By</th>
+          <th>PAYMENT ID</th>
+          <th>STUDENT</th>
+          <th>TYPE</th>
+          <th>AMOUNT</th>
+          <th>PAYMENT MODE</th>
+          <th>CREATED DATE</th>
+          <th>BY</th>
         </thead>
         <tbody>
           <?php

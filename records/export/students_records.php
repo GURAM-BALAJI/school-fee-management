@@ -25,8 +25,6 @@
                     <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Export <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a class="dataExport" data-type="excel">Excel</a></li>
-                        <li><a class="dataExport" data-type="csv">CSV</a></li>
-                        <li><a class="dataExport" data-type="txt">Text</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,17 +37,17 @@
                     <th>GENDER</th>
                     <th>DOB</th>
                     <th>RELIGION</th>
-                    <th>CAST</th>
+                    <th>CASTE</th>
                     <th>MOTHER TONGUE</th>
                     <th>BLOOD GROUP</th>
-                    <th>ADHER NO</th>
+                    <th>AADHAR NO.</th>
                     <th>ADDRESS</th>
-                    <th>FATHER NAME</th>
-                    <th>FATHER PHONE NO</th>
-                    <th>FATHER OCCUPATION </th>
-                    <th>MOTHER NAME</th>
-                    <th>MOTHER PHONE NO </th>
-                    <th>MOTHER OCCUPATION</th>
+                    <th>FATHER'S NAME</th>
+                    <th>FATHER'S PHONE NO</th>
+                    <th>FATHER'S OCCUPATION </th>
+                    <th>MOTHER'S NAME</th>
+                    <th>MOTHER'S PHONE NO </th>
+                    <th>MOTHER'S OCCUPATION</th>
                     <th>LAST UPDATEDED DATE</th>
                     <th>JOINED DATE</th>
                 </thead>
