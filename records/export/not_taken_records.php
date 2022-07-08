@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- jQuery -->
-    <title>ROYALPUPIL INTERNATIONAL SCHOOL</title>
+    <title>DEMO SCHOOL</title>
     <link rel="icon" type="image/x-icon" href="../../images/favicon.jpeg">
 </head>
 
@@ -29,7 +29,7 @@
             <h3><?php if ($payment_types == 2)
                     echo 'Books Not Taken List';
                 elseif ($payment_types == 3)
-                    echo 'Dress Not Taken List';
+                    echo 'Uniform Not Taken List';
                 elseif ($payment_types == 4)
                     echo 'Transport Not Taken List';
                 ?></h3>

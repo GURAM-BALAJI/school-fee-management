@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- jQuery -->
-    <title>ROYALPUPIL INTERNATIONAL SCHOOL</title>
+    <title>DEMO SCHOOL</title>
     <link rel="icon" type="image/x-icon" href="../../images/favicon.jpeg">
 </head>
 
@@ -51,7 +51,7 @@
                         <th>BOOKS FEES BALANCE</th>
                     <?php } ?>
                     <?php if ($payment_types == 3 or $payment_types == 0) { ?>
-                        <th>DRESS FEES BALANCE</th>
+                        <th>UNIFORM FEES BALANCE</th>
                     <?php } ?>
                     <?php if ($payment_types == 4 or $payment_types == 0) { ?>
                         <th>TRANSPORT FEES BALANCE</th>

@@ -20,7 +20,7 @@ if (isset($_POST['id'])) {
 		elseif ($row['payments_type'] == '2')
 			$fee_view .= "<td style='padding: 5px;'>Books Fees</td>";
 		elseif ($row['payments_type'] == '3')
-			$fee_view .= "<td style='padding: 5px;'>Dress Fees</td>";
+			$fee_view .= "<td style='padding: 5px;'>Uniform Fees</td>";
 		elseif ($row['payments_type'] == '4')
 			$fee_view .= "<td style='padding: 5px;'>Transport Fees</td>";
 		$fee_view .= "<td style='padding: 5px;'>".$row['payments_fee']."</td>";

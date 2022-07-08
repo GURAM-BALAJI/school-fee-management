@@ -370,7 +370,7 @@
                                     <td style="padding: 5px;"> <span id="view_students_total_books_fee_balance"></span></td>
                                 </tr>
                                 <tr>
-                                    <th style="padding: 5px;">DRESS FEE</th>
+                                    <th style="padding: 5px;">UNIFORM FEE</th>
                                     <td style="padding: 5px;"> <span id="view_students_total_dress_fee"></span></td>
                                     <td style="padding: 5px;"><span id="view_student_total_dress_fee_paid"></span></td>
                                     <td style="padding: 5px;"> <span id="view_students_total_dress_fee_balance"></span></td>

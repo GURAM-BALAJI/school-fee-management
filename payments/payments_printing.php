@@ -18,21 +18,21 @@
                         </tr>
                         <tr style="height:40px;">
                             <td rowspan="4" style="width:40px;"><img src="./logo.jpeg" width="115px" height="115px"></td>
-                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">ROYALPUPIL INTERNATIONAL SCHOOL
+                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">DEMO SCHOOL
                             </th>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>Kuduthini 583115, Bellary, Karnataka</center>
+                                <center>2nd main road demo collony, Banglore, Karnataka</center>
                             </td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>royalpupilinternationalschool@gmail.com</center>
+                                <center>demoschool@gmail.com</center>
                             </td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>+91 9845138636</center>
+                                <center>+91 1234567890</center>
                             </td>
                         </tr>
             </tr>
@@ -43,7 +43,7 @@
                 foreach ($stmt as $row) {
             ?>
                     <tr style="height:15px;border-bottom:1pt solid black;border-top:1pt solid black;">
-                        <th>No:29120117805</th>
+                        <th>No:123456789</th>
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
@@ -83,7 +83,7 @@
                     </tr>
                     <tr style="height:15px;border-bottom:1pt solid black;">
                         <th colspan="2">Particulars</th>
-                        <th>Amount(Rs)</th>
+                        <th>Amount(&#8377;)</th>
                     </tr>
                     <tr style="border-bottom:1pt solid black;" >
                         <td colspan="2" style="padding:20px;" VALIGN=TOP><?php if ($row['payments_type'] == '1')
@@ -91,14 +91,14 @@
                                         elseif ($row['payments_type'] == '2')
                                             echo "Books Fee";
                                         elseif ($row['payments_type'] == '3')
-                                            echo "Dress Fee";
+                                            echo "Uniform Fee";
                                         elseif ($row['payments_type'] == '4')
                                             echo "Transport Fee"; ?></td>
-                        <td style="border-left:1pt solid black;padding:20px;" VALIGN=TOP><?php echo $row['payments_fee'].'.00'; ?></td>
+                        <td style="border-left:1pt solid black;padding:20px;" VALIGN=TOP>&#8377;<?php echo $row['payments_fee'].'.00'; ?></td>
                     </tr>
                     <tr style="height:15px;border-bottom:1pt solid black;">
-                        <td colspan="2">Total Rs.</td>
-                        <th rowspan="2" style="border-left:1pt solid black;"><?php echo $row['payments_fee'].'.00'; ?></th>
+                        <td colspan="2">Total &#8377;</td>
+                        <th rowspan="2" style="border-left:1pt solid black;">&#8377;<?php echo $row['payments_fee'].'.00'; ?></th>
                     </tr>
                     <tr style="height:15px;text-transform: capitalize;">
                         <th colspan="2"><?php 
@@ -157,21 +157,21 @@
                         </tr>
                         <tr style="height:40px;">
                         <td rowspan="4" style="width:40px;"><img src="./logo.jpeg" width="115px" height="115px"></td>
-                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">ROYALPUPIL INTERNATIONAL SCHOOL
+                            <th colspan="2" style="text-transform: uppercase;font-size: 16px;">DEMO SCHOOL
                             </th>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>Kuduthini 583115, Bellary, Karnataka</center>
+                                <center>2nd main road demo collony, Banglore, Karnataka</center>
                             </td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>royalpupilinternationalschool@gmail.com</center>
+                                <center>demoschool@gmail.com</center>
                             </td>
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">
-                                <center>+91 9845138636</center>
+                                <center>+91 1234567890</center>
                             </td>
                         </tr>
             </tr>
@@ -182,7 +182,7 @@
                 foreach ($stmt as $row) {
             ?>
                     <tr style="height:15px;border-bottom:1pt solid black;border-top:1pt solid black;">
-                        <th>No:29120117805</th>
+                        <th>No:123456789</th>
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
@@ -222,7 +222,7 @@
                     </tr>
                     <tr style="height:15px;border-bottom:1pt solid black;">
                         <th colspan="2">Particulars</th>
-                        <th>Amount(Rs)</th>
+                        <th>Amount(&#8377;)</th>
                     </tr>
                     <tr style="border-bottom:1pt solid black;" >
                         <td colspan="2" style="padding:20px;" VALIGN=TOP><?php if ($row['payments_type'] == '1')
@@ -230,14 +230,14 @@
                                         elseif ($row['payments_type'] == '2')
                                             echo "Books Fee";
                                         elseif ($row['payments_type'] == '3')
-                                            echo "Dress Fee";
+                                            echo "Uniform Fee";
                                         elseif ($row['payments_type'] == '4')
                                             echo "Transport Fee"; ?></td>
-                        <td style="border-left:1pt solid black;padding:20px;" VALIGN=TOP><?php echo $row['payments_fee'].'.00'; ?></td>
+                        <td style="border-left:1pt solid black;padding:20px;" VALIGN=TOP>&#8377;<?php echo $row['payments_fee'].'.00'; ?></td>
                     </tr>
                     <tr style="height:15px;border-bottom:1pt solid black;">
-                        <td colspan="2">Total Rs.</td>
-                        <th rowspan="2" style="border-left:1pt solid black;"><?php echo $row['payments_fee'].'.00'; ?></th>
+                        <td colspan="2">Total &#8377;</td>
+                        <th rowspan="2" style="border-left:1pt solid black;">&#8377;<?php echo $row['payments_fee'].'.00'; ?></th>
                     </tr>
                     <tr style="height:15px;text-transform: capitalize;">
                         <th colspan="2"><?php 

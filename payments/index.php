@@ -109,14 +109,14 @@
                             $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id='" . $row['payments_students_id'] . "'");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
-                              echo "<td>" . $row1['students_name'] . " ( " . $row1['students_regestration_no'] . " )</td>";
+                              echo "<td>" . $row1['students_name'] . " (" . $row1['students_regestration_no'] . ")</td>";
                             echo "<td>";
                             if ($row['payments_type'] == '1')
                               echo "Tuition Fee";
                             elseif ($row['payments_type'] == '2')
                               echo "Books Fee";
                             elseif ($row['payments_type'] == '3')
-                              echo "Dress Fee";
+                              echo "Uniform Fee";
                             elseif ($row['payments_type'] == '4')
                               echo "Transport Fee";
                             echo "</td>";

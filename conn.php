@@ -2,9 +2,9 @@
 
 Class Database{
  
-	private $server = "mysql:host=localhost;dbname=u323542449_royal";
-	private $username = "u323542449_pupil";
-	private $password = "x7dDV/*6vH";
+	private $server = "mysql:host=localhost;dbname=u323542449_demo";
+	private $username = "u323542449_school";
+	private $password = "h7O|me8lf=";
 	private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
 	protected $conn;
  	

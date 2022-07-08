@@ -21,9 +21,9 @@ if (isset($_POST["student_id"]) && !empty($_POST["student_id"])) {
             else
                 echo "<option value='2'>Books Fees</option>";
             if ($row['students_total_dress_fee'] != 0)
-                echo "<option value='3'>Dress Fees, Total: " . $row['students_total_dress_fee'] . ' Balance:' . $row['students_total_dress_fee_balance'] . "</option>";
+                echo "<option value='3'>Uniform Fees, Total: " . $row['students_total_dress_fee'] . ' Balance:' . $row['students_total_dress_fee_balance'] . "</option>";
             else
-                echo "<option value='3'>Dress Fees</option>";
+                echo "<option value='3'>Uniform Fees</option>";
             if ($row['students_total_transport_fee'] != 0)
                 echo "<option value='4'>Transport Fees, Total: " . $row['students_total_transport_fee'] . ' Balance:' . $row['students_total_transport_fee_balance'] . "</option>";
             else

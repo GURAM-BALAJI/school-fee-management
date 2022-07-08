@@ -65,7 +65,7 @@
                                                 <th>CLASS</th>
                                                 <th>TUITION FEES BALANCE</th>
                                                 <th>BOOKS FEES BALANCE</th>
-                                                <th>DRESS FEES BALANCE</th>
+                                                <th>UNIFORM FEES BALANCE</th>
                                                 <th>TRANSPORT FEES BALANCE</th>
                                                 <th>TOTAL BALANCE</th>
                                                 <th>TOOLS_AND_FEE_HISTORY</th>

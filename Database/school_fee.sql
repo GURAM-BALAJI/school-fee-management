@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2022 at 12:19 PM
+-- Generation Time: Jul 05, 2022 at 05:07 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.1.30
 
@@ -67,7 +67,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`, `admin_name`, `admin_phone`, `admin_photo`, `admin_status`, `students_view`, `students_create`, `students_edit`, `students_del`, `admin_view`, `admin_create`, `admin_edit`, `admin_del`, `classes_and_fee_view`, `classes_and_fee_create`, `classes_and_fee_edit`, `classes_and_fee_del`, `payments_view`, `payments_create`, `payments_del`, `payments_records_view`, `payment_pending_records_view`, `students_records_view`, `not_taken_records_view`, `admin_special`, `admin_delete`, `admin_added_date`, `admin_updated_date`, `admin_req`) VALUES
-(6, 'royalpupilinternationalschool@gmail.com', '$2y$10$IUHcsSNbUjp1W.9wG76dZ.YI.wXYIhOWzgwf.hun/0Xp2gGgiUjWC', 'ADMIN', 9845138636, '2022-06-26_1656253258.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-07-02 09:44:09', 0);
+(6, 'demo', '$2y$10$IUHcsSNbUjp1W.9wG76dZ.YI.wXYIhOWzgwf.hun/0Xp2gGgiUjWC', 'ADMIN', 123456789, '2022-06-26_1656253258.jpeg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '18-11-2021 11:13:30 pm', '2022-07-05 15:06:36', 0);
 
 -- --------------------------------------------------------
 
@@ -182,19 +182,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `classes_and_fee`
 --
 ALTER TABLE `classes_and_fee`
-  MODIFY `classes_and_fee_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `classes_and_fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payments_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `payments_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1039;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `students_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `students_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000005;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -50,7 +50,7 @@
                                                         <option value="0"> All Payments </option>
                                                         <option value='1'>Tuition Payments</option>
                                                         <option value='2'>Books Payments</option>
-                                                        <option value='3'>Dress Payments</option>
+                                                        <option value='3'>Uniform Payments</option>
                                                         <option value='4'>Transport Payments</option>
                                                     </select>
                                                 </div>
