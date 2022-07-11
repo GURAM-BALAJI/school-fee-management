@@ -51,14 +51,14 @@
             for ($i = $starting_date; $i <= $ending_date; $i += 86400) {
               $date = date("d-m-Y", $i);
               if ($payment_types == 0)
-                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_date='$date'");
+                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_date='$date' AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
               else
-                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_type=$payment_types AND payments_date='$date'");
+                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_type=$payment_types AND payments_date='$date'  AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
               $stmt->execute();
               foreach ($stmt as $row) {
                 echo  "<td>" . $slno++ . "</td>";
                 echo  "<td>" . $row['payments_id'] . "</td>";
-                $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id='" . $row['payments_students_id'] . "'");
+                $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id=" . $row['payments_students_id'] . "  AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                 $stmt1->execute();
                 foreach ($stmt1 as $row1)
                   echo "<td>" . $row1['students_name'] . " ( " . $row1['students_regestration_no'] . " )</td>";
@@ -89,7 +89,7 @@
                   echo "OTHERS";
                 echo "</td>";
                 echo "<td>" . $row['payments_created_date'] . "</td>";
-                $stmt1 = $conn->prepare("SELECT admin_id,admin_name FROM admin WHERE admin_id='" . $row['payments_by'] . "'");
+                $stmt1 = $conn->prepare("SELECT admin_id,admin_name FROM admin WHERE admin_id=" . $row['payments_by'] . "  AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
                 $stmt1->execute();
                 foreach ($stmt1 as $row1)
                   echo "<td>" . $row1['admin_name'] . " ( " . $row1['admin_id'] . " )</td>";

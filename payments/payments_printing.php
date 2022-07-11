@@ -38,7 +38,7 @@
             </tr>
             <?php $conn = $pdo->open();
             try {
-                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_id=" . $_GET['payment_id'] . "");
+                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_id=" . $_GET['payment_id'] . " AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
                 $stmt->execute();
                 foreach ($stmt as $row) {
             ?>
@@ -47,7 +47,7 @@
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
-                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
+                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . " AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                     $stmt1->execute();
                     foreach ($stmt1 as $row1) { ?>
                         <tr style="height:30px;">
@@ -56,7 +56,7 @@
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">Father Name: <?php echo $row1['students_father_name']; ?></td>
-                            <?php $stmt11 = $conn->prepare("SELECT classes_and_fee_class FROM classes_and_fee WHERE classes_and_fee_value='" . $row1['students_class'] . "'");
+                            <?php $stmt11 = $conn->prepare("SELECT classes_and_fee_class FROM classes_and_fee WHERE classes_and_fee_value=" . $row1['students_class'] . " AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
                             $stmt11->execute();
                             foreach ($stmt11 as $row11) { ?>
                                 <td>Class: <?php echo $row11['classes_and_fee_class']; ?></td>
@@ -177,7 +177,7 @@
             </tr>
             <?php $conn = $pdo->open();
             try {
-                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_id=" . $_GET['payment_id'] . "");
+                $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_id=" . $_GET['payment_id'] . " AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
                 $stmt->execute();
                 foreach ($stmt as $row) {
             ?>
@@ -186,7 +186,7 @@
                         <th>Fee Receipt</th>
                         <th>Date: <?php echo $row['payments_date']; ?></th>
                     </tr>
-                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . "");
+                    <?php $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name,students_father_name,students_class FROM students where students_id=" . $row['payments_students_id'] . " AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                     $stmt1->execute();
                     foreach ($stmt1 as $row1) { ?>
                         <tr style="height:30px;">
@@ -195,7 +195,7 @@
                         </tr>
                         <tr style="height:30px;">
                             <td colspan="2">Father Name: <?php echo $row1['students_father_name']; ?></td>
-                            <?php $stmt11 = $conn->prepare("SELECT classes_and_fee_class FROM classes_and_fee WHERE classes_and_fee_value='" . $row1['students_class'] . "'");
+                            <?php $stmt11 = $conn->prepare("SELECT classes_and_fee_class FROM classes_and_fee WHERE classes_and_fee_value=" . $row1['students_class'] . " AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
                             $stmt11->execute();
                             foreach ($stmt11 as $row11) { ?>
                                 <td>Class: <?php echo $row11['classes_and_fee_class']; ?></td>

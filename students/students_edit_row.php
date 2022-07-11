@@ -6,12 +6,12 @@ if (isset($_POST['id'])) {
 
 	$conn = $pdo->open();
 
-	$stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:id");
+	$stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 	$stmt->execute(['id' => $id]);
 	$row = $stmt->fetch();
 
 	$students_class = "<select class='form-control' name='classes_and_fee_value' required>";
-	$stmt1 = $conn->prepare("SELECT * FROM classes_and_fee");
+	$stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
 	$stmt1->execute();
 	foreach ($stmt1 as $row1){
 		if ($row1['classes_and_fee_value'] == $row['students_class'])
@@ -36,6 +36,7 @@ $students_gender.= "<option value='0'>Male</option>";
 	$students_gender.= "<option value='2'>Others</option></select>";
 
 	$row = array(
+		'students_regestration_no'=>$row['students_regestration_no'],
 		'students_id' => $row['students_id'],
 		'students_DOB' =>  $row['students_DOB'],
 		'students_name' =>  $row['students_name'],

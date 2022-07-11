@@ -8,7 +8,7 @@
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("UPDATE admin SET admin_status=:status WHERE admin_id=:id");
+			$stmt = $conn->prepare("UPDATE admin SET admin_status=:status WHERE admin_id=:id AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['status'=>1, 'id'=>$id]);
 			$_SESSION['success'] = 'admin activated successfully';
 		}

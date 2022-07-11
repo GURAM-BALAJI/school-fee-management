@@ -8,7 +8,7 @@
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("UPDATE students set students_deleted='1' WHERE students_id=:id");
+			$stmt = $conn->prepare("UPDATE students set students_deleted='1' WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['id'=>$id]);
 
 			$_SESSION['success'] = 'Students deleted successfully';

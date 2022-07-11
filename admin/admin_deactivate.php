@@ -8,7 +8,7 @@
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("UPDATE admin SET admin_status=:status WHERE admin_id=:id");
+			$stmt = $conn->prepare("UPDATE admin SET admin_status=:status WHERE admin_id=:id AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['status'=>0, 'id'=>$id]);
 			$_SESSION['success'] = 'admin deactivated successfully';
 		}
@@ -25,4 +25,3 @@
 }
 
 	header('location: index.php');
-?>

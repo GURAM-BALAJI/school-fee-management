@@ -8,7 +8,7 @@
 		$password = $_POST['password'];
 		$address = $_POST['address'];
 		$contact = $_POST['contact'];
-
+		$admin_school_id=$_SESSION['admin_school_id'];
 		$conn = $pdo->open();
 
 		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM admin WHERE admin_email=:email");
@@ -23,14 +23,14 @@
 			$filename = $_FILES['photo']['name'];
 			if(!empty($filename)){
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
-                    $filename=date('Y-m-d').'_'.time().'.'.$ext;
+                    $filename=$admin_school_id.'_'.date('Y-m-d').'_'.time().'.'.$ext;
 				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 			}
 try{
 	date_default_timezone_set('Asia/Kolkata');
 	$today = date('d-m-Y h:i:s a');
-$stmt = $conn->prepare("INSERT INTO admin (admin_email, admin_password, admin_name, admin_phone, admin_photo, admin_status, admin_added_date) VALUES (:email, :password, :name, :contact, :photo, :status, :admin_added_date)");
-$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'contact'=>$contact, 'photo'=>$filename, 'status'=>1, 'admin_added_date'=>$today ]);
+$stmt = $conn->prepare("INSERT INTO admin (admin_email, admin_password, admin_name, admin_phone, admin_photo, admin_status, admin_added_date,admin_school_id) VALUES (:email, :password, :name, :contact, :photo, :status, :admin_added_date,:admin_school_id)");
+$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'contact'=>$contact, 'photo'=>$filename, 'status'=>1, 'admin_added_date'=>$today, 'admin_school_id'=>$admin_school_id ]);
 				$_SESSION['success'] = 'admin added successfully';
 
 			}
@@ -47,5 +47,3 @@ $stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'contact'
 }
 
 	header('location: index.php');
-
-?>

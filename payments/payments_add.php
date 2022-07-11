@@ -8,6 +8,7 @@ if (isset($_POST['add'])) {
 	$payment_through = $_POST['payment_through'];
 	$pay = $_POST['pay'];
 	$by = $admin['admin_id'];
+	$admin_school_id=$_SESSION['admin_school_id'];
 	$conn = $pdo->open();
 	try {
 		if ($fees_type == 1) {
@@ -26,20 +27,20 @@ if (isset($_POST['add'])) {
 
 		if (isset($_POST['balance_fee'])) {
 			$balance_fee = $_POST['balance_fee'] - $pay;
-			$stmt = $conn->prepare("UPDATE students set $type_balance=:balance WHERE students_id=:id");
-			$stmt->execute(['balance' => $balance_fee, 'id' => $student_id]);
+			$stmt = $conn->prepare("UPDATE students set $type_balance=:balance WHERE students_id=:id AND students_school_id=:admin_school_id");
+			$stmt->execute(['balance' => $balance_fee, 'id' => $student_id, 'admin_school_id'=>$admin_school_id]);
 		} else {
 			$balance_fee = $total_fee - $pay;
-			$stmt = $conn->prepare("UPDATE students set $type=:total,$type_balance=:balance WHERE students_id=:id");
-			$stmt->execute(['total' => $total_fee, 'balance' => $balance_fee, 'id' => $student_id]);
+			$stmt = $conn->prepare("UPDATE students set $type=:total,$type_balance=:balance WHERE students_id=:id AND students_school_id=:admin_school_id");
+			$stmt->execute(['total' => $total_fee, 'balance' => $balance_fee, 'id' => $student_id, 'admin_school_id'=>$admin_school_id]);
 		}
 
 		date_default_timezone_set('Asia/Kolkata');
 		$now = date('d-m-Y h:i:s');
 		$today = date('d-m-Y');
-		$stmt = $conn->prepare("INSERT INTO payments (payment_through,payments_students_id,payments_type,payments_fee,payments_created_date,payments_by,payments_date) VALUES (:payment_through,:payments_students_id,:payments_type,:payments_fee,:payments_created_date,:payments_by,:payments_date)");
-		$stmt->execute(['payment_through' => $payment_through, 'payments_students_id' => $student_id, 'payments_type' => $fees_type, 'payments_fee' => $pay, 'payments_created_date' => $now, 'payments_by' => $by, 'payments_date' => $today]);
-		$stmt_id = $conn->prepare("SELECT payments_id FROM payments WHERE payments_created_date='$now' AND payments_by = $by");
+		$stmt = $conn->prepare("INSERT INTO payments (payment_through,payments_students_id,payments_type,payments_fee,payments_created_date,payments_by,payments_date,payments_school_id) VALUES (:payment_through,:payments_students_id,:payments_type,:payments_fee,:payments_created_date,:payments_by,:payments_date,:payments_school_id)");
+		$stmt->execute(['payment_through' => $payment_through, 'payments_students_id' => $student_id, 'payments_type' => $fees_type, 'payments_fee' => $pay, 'payments_created_date' => $now, 'payments_by' => $by, 'payments_date' => $today, 'payments_school_id'=>$admin_school_id]);
+		$stmt_id = $conn->prepare("SELECT payments_id FROM payments WHERE payments_created_date='$now' AND payments_by = $by AND payments_school_id=$admin_school_id");
 		$stmt_id->execute();
 		foreach ($stmt_id as $row_id){
 			header('location: payments_printing.php?payment_id=' . $row_id['payments_id']);

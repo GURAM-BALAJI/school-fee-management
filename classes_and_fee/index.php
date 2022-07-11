@@ -70,9 +70,8 @@
                       <tbody>
                         <?php
                         $conn = $pdo->open();
-
                         try {
-                          $stmt = $conn->prepare("SELECT * FROM classes_and_fee");
+                          $stmt = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . " ");
                           $stmt->execute();
                           foreach ($stmt as $row) {
                             echo "<tr>";

@@ -74,7 +74,7 @@
                                                 <?php
                                                 $conn = $pdo->open();
                                                 try {
-                                                    $stmt = $conn->prepare("SELECT * FROM students WHERE students_deleted='0'");
+                                                    $stmt = $conn->prepare("SELECT * FROM students WHERE students_deleted='0' AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                                                     $stmt->execute();
                                                     $slno=1;
                                                     foreach ($stmt as $row) {
@@ -86,7 +86,7 @@
                                                         if ($admin['students_edit'])
                                                             echo " <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='" . $row['students_id'] . "'><i class='fa fa-edit'></i></a></span></td>";
                                                         echo "<td>" . $row['students_name'] . "</td>";
-                                                        $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_value='" . $row['students_class'] . "'");
+                                                        $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_value=" . $row['students_class'] . " AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
                                                         $stmt1->execute();
                                                         echo "<td>";
                                                         foreach ($stmt1 as $row1)

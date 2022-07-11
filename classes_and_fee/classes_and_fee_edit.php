@@ -7,7 +7,7 @@ if ($req_per == 1) {
 		$value = $_POST['value'];
 		$class = $_POST['class'];
 		$fee = $_POST['fee'];
-		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM classes_and_fee WHERE classes_and_fee_value=:value AND classes_and_fee_id!=:id");
+		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM classes_and_fee WHERE classes_and_fee_value=:value AND classes_and_fee_id!=:id AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . " ");
 		$stmt->execute(['value' => $value,'id' => $id]);
 		$row = $stmt->fetch();
 		if ($row['numrows'] > 0) {
@@ -16,7 +16,7 @@ if ($req_per == 1) {
 			try {
 				date_default_timezone_set('Asia/Kolkata');
 				$today = date('d-m-Y h:i:s a');
-				$stmt = $conn->prepare("UPDATE classes_and_fee SET classes_and_fee_value=:classes_and_fee_value,classes_and_fee_class=:classes_and_fee_class,classes_and_fee_fee=:classes_and_fee_fee,classes_and_fee_updated_date=:classes_and_fee_updated_date WHERE classes_and_fee_id=:id");
+				$stmt = $conn->prepare("UPDATE classes_and_fee SET classes_and_fee_value=:classes_and_fee_value,classes_and_fee_class=:classes_and_fee_class,classes_and_fee_fee=:classes_and_fee_fee,classes_and_fee_updated_date=:classes_and_fee_updated_date WHERE classes_and_fee_id=:id AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . " ");
 				$stmt->execute(['classes_and_fee_value' => $value, 'classes_and_fee_class' => $class, 'classes_and_fee_fee' => $fee, 'classes_and_fee_updated_date' => $today, 'id' => $id]);
 				$_SESSION['success'] = 'Class and fee updated successfully';
 			} catch (PDOException $e) {

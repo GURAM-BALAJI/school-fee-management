@@ -13,13 +13,13 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li><a href="../home/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li><a href="../home/index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <?php
       if ($admin['payments_view']) { ?>
         <li class="header">PAYMENTS</li>
         <?php
         if ($admin['payments_view']) { ?>
-          <li><a href="../payments/"><i class="fa fa-money"></i> <span>Payments</span></a></li>
+          <li><a href="../payments/index.php"><i class="fa fa-money"></i> <span>Payments</span></a></li>
         <?php } ?>
       <?php } ?>
       <?php
@@ -27,12 +27,12 @@
         <li class="header">MANAGE</li>
         <?php
         if ($admin['students_view']) { ?>
-          <li><a href="../students/"><i class="fa fa-users"></i> <span>Students</span></a></li>
+          <li><a href="../students/index.php"><i class="fa fa-users"></i> <span>Students</span></a></li>
         <?php } ?>
 
         <?php
         if ($admin['classes_and_fee_view']) { ?>
-          <li><a href="../classes_and_fee/"><i class="fa fa-signal"></i> <span>Class and Fee</span></a></li>
+          <li><a href="../classes_and_fee/index.php"><i class="fa fa-signal"></i> <span>Class and Fee</span></a></li>
         <?php } ?>
       <?php } ?>
       <?php
@@ -56,11 +56,15 @@
         <?php } ?>
       <?php } ?>
       <?php
-      if ($admin['admin_view']) { ?>
+      if ($admin['admin_view'] || $admin['admin_type']) { ?>
         <li class="header">LOGIN'S</li>
         <?php
-        if ($admin['admin_view']) { ?>
-          <li><a href="../admin/"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
+        if ($admin['admin_view'] && $admin['admin_type']==0 ) { ?>
+          <li><a href="../admin/index.php"><i class="fa fa-grav"></i> <span>Admin</span></a></li>
+        <?php } 
+        if ($admin['admin_type']) { ?>
+          <li><a href="../supper_admin/index.php"><i class="fa fa-lock"></i> <span>Supper Admin</span></a></li>
+          <li><a href="../supper_admin_school_info/index.php"><i class="fa fa-id-card-o"></i> <span>School Info</span></a></li>
         <?php } ?>
       <?php } ?>
     </ul>

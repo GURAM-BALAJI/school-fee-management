@@ -100,16 +100,18 @@
                             $today =  date('d-m-Y', strtotime($_POST['date']));
                           else
                             $today = date('d-m-Y');
-                          $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_date='$today' order by payments_id DESC");
+                          $stmt = $conn->prepare("SELECT * FROM payments WHERE payments_date='$today' AND payments_school_id=" . $_SESSION['admin_school_id'] . "  order by payments_id DESC");
                           $stmt->execute();
                           $slno = 1;
                           foreach ($stmt as $row) {
                             echo  "<td>" . $slno++ . "</td>";
                             echo  "<td>" . $row['payments_id'] . "</td>";
-                            $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id='" . $row['payments_students_id'] . "'");
+                            echo "<td>";
+                            $stmt1 = $conn->prepare("SELECT students_regestration_no,students_name FROM students WHERE students_id=" . $row['payments_students_id'] . " AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
-                              echo "<td>" . $row1['students_name'] . " (" . $row1['students_regestration_no'] . ")</td>";
+                              echo $row1['students_name'] . " (" . $row1['students_regestration_no'] . ")";
+                              echo "</td>";
                             echo "<td>";
                             if ($row['payments_type'] == '1')
                               echo "Tuition Fee";
@@ -136,7 +138,7 @@
                               echo "OTHERS";
                             echo "</td>";
                             echo "<td>" . $row['payments_created_date'] . "</td>";
-                            $stmt1 = $conn->prepare("SELECT admin_id,admin_name FROM admin WHERE admin_id='" . $row['payments_by'] . "'");
+                            $stmt1 = $conn->prepare("SELECT admin_id,admin_name FROM admin WHERE admin_id=" . $row['payments_by'] . " AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
                               echo "<td>" . $row1['admin_name'] . " ( " . $row1['admin_id'] . " )</td>";

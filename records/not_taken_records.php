@@ -37,7 +37,7 @@
                                                     <select class="form-control" name="classes_and_fee_value">
                                                         <option value="0">All Class</option>
                                                         <?php
-                                                        $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee");
+                                                        $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee  WHERE classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
                                                         $stmt1->execute();
                                                         foreach ($stmt1 as $row1)
                                                             echo "<option value='" . $row1['classes_and_fee_value'] . "'>" . $row1['classes_and_fee_class'] . '(' . $row1['classes_and_fee_fee'] . ')' . "</option>";

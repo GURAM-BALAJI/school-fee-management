@@ -10,7 +10,7 @@
 		$contact = $_POST['contact'];
 
 		$conn = $pdo->open();
-		$stmt = $conn->prepare("SELECT * FROM admin WHERE admin_id=:id");
+		$stmt = $conn->prepare("SELECT * FROM admin WHERE admin_id=:id AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
 		$stmt->execute(['id'=>$id]);
 		$row = $stmt->fetch();
 
@@ -22,7 +22,7 @@
 		}
 
 		try{
-			$stmt = $conn->prepare("UPDATE admin SET admin_email=:email, admin_password=:password, admin_name=:name,  admin_phone=:contact WHERE admin_id=:id");
+			$stmt = $conn->prepare("UPDATE admin SET admin_email=:email, admin_password=:password, admin_name=:name,  admin_phone=:contact WHERE admin_id=:id AND admin_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'contact'=>$contact, 'id'=>$id]);
 			$_SESSION['success'] = 'admin updated successfully';
 
@@ -40,5 +40,3 @@
 }
 
 	header('location: index.php');
-
-?>

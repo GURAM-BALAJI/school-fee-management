@@ -4,10 +4,10 @@ include '../session.php';
 
 if (isset($_POST["student_id"]) && !empty($_POST["student_id"])) {
     $student_id = $_POST["student_id"];
-
+    $admin_school_id=$_SESSION['admin_school_id'];
     $conn = $pdo->open();
-    $stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:student_id");
-    $stmt->execute(['student_id' => $student_id]);
+    $stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:student_id AND students_school_id=:admin_school_id ");
+    $stmt->execute(['student_id' => $student_id, 'admin_school_id'=>$admin_school_id]);
     $data = $stmt->fetchAll();
     if (!empty($data)) {
         echo "<option disabled selected> Select Payment </option>";

@@ -67,14 +67,14 @@
                         $total_all = $total_school_fee = $total_books_fee = $total_dress_fee = $total_transport_fee = 0;
                         if ($classes_and_fee_value == 0) {
                             if ($payment_types == 0)
-                                $stmt = $conn->prepare("SELECT * FROM students WHERE (students_total_school_fee_balance!='0' OR students_total_books_fee_balance!='0' OR students_total_dress_fee_balance!='0' OR students_total_transport_fee_balance!='0') AND students_deleted='0'");
+                                $stmt = $conn->prepare("SELECT * FROM students WHERE (students_total_school_fee_balance!='0' OR students_total_books_fee_balance!='0' OR students_total_dress_fee_balance!='0' OR students_total_transport_fee_balance!='0') AND students_deleted='0' AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                             else
-                                $stmt = $conn->prepare("SELECT * FROM students WHERE $payment_balance_name!='0' AND students_deleted='0'");
+                                $stmt = $conn->prepare("SELECT * FROM students WHERE $payment_balance_name!='0' AND students_deleted='0' AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                         } else {
                             if ($payment_types == 0)
-                                $stmt = $conn->prepare("SELECT * FROM students WHERE (students_total_school_fee_balance!='0' OR students_total_books_fee_balance!='0' OR students_total_dress_fee_balance!='0' OR students_total_transport_fee_balance!='0') AND students_deleted='0' AND students_class=$classes_and_fee_value");
+                                $stmt = $conn->prepare("SELECT * FROM students WHERE (students_total_school_fee_balance!='0' OR students_total_books_fee_balance!='0' OR students_total_dress_fee_balance!='0' OR students_total_transport_fee_balance!='0') AND students_deleted='0' AND students_class=$classes_and_fee_value AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                             else
-                                $stmt = $conn->prepare("SELECT * FROM students WHERE $payment_balance_name!='0' AND students_deleted='0' AND students_class='$classes_and_fee_value'");
+                                $stmt = $conn->prepare("SELECT * FROM students WHERE $payment_balance_name!='0' AND students_deleted='0' AND students_class='$classes_and_fee_value' AND students_school_id=" . $_SESSION['admin_school_id'] . "");
                         }
                         $stmt->execute();
                         $slno = 1;
@@ -83,7 +83,7 @@
                             echo "<td>" . $slno++ . "</td>";
                             echo "<td>" . $row['students_regestration_no'] . "</td>";
                             echo "<td>" . $row['students_name'] . "</td>";
-                            $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_value='" . $row['students_class'] . "'");
+                            $stmt1 = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_value=" . $row['students_class'] . " AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
                             $stmt1->execute();
                             foreach ($stmt1 as $row1)
                                 echo "<td>" . $row1['classes_and_fee_class'] . "</td>";

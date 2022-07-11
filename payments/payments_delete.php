@@ -5,7 +5,7 @@ if (isset($_POST['delete'])) {
 	$id = $_POST['id'];
 	$conn = $pdo->open();
 	try {
-		$stmt1 = $conn->prepare("SELECT * FROM payments WHERE payments_id=:id");
+		$stmt1 = $conn->prepare("SELECT * FROM payments WHERE payments_id=:id AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
 		$stmt1->execute(['id' => $id]);
 		foreach ($stmt1 as $row1) {
 			$payments_students_id = $row1['payments_students_id'];
@@ -23,22 +23,22 @@ if (isset($_POST['delete'])) {
 				$type = "students_total_transport_fee";
 				$type_balance = "students_total_transport_fee_balance";
 			}
-			$stmt2 = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM payments WHERE payments_students_id=:payments_students_id AND payments_type=:payments_type");
+			$stmt2 = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM payments WHERE payments_students_id=:payments_students_id AND payments_type=:payments_type AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt2->execute(['payments_students_id' => $payments_students_id, 'payments_type' => $payments_type]);
 			$row2 = $stmt2->fetch();
 			if ($row2['numrows'] == 1) {
-				$stmt3 = $conn->prepare("UPDATE students set $type=:type,$type_balance =:type_balance WHERE students_id=:id");
+				$stmt3 = $conn->prepare("UPDATE students set $type=:type,$type_balance =:type_balance WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 				$stmt3->execute(['type' => 0, 'type_balance' => 0, 'id' => $payments_students_id]);
 			} else {
-				$stmt4 = $conn->prepare("SELECT * FROM students WHERE students_id=:id");
+				$stmt4 = $conn->prepare("SELECT * FROM students WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 				$stmt4->execute(['id' => $payments_students_id]);
 				foreach ($stmt4 as $row4) {
 					$balance = $row4[$type_balance] + $row1['payments_fee'];
-					$stmt3 = $conn->prepare("UPDATE students set $type_balance=:balance WHERE students_id=:id");
+					$stmt3 = $conn->prepare("UPDATE students set $type_balance=:balance WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 					$stmt3->execute(['balance' => $balance, 'id' => $payments_students_id]);
 				}
 			}
-			$stmt = $conn->prepare("DELETE FROM payments WHERE payments_id=:id");
+			$stmt = $conn->prepare("DELETE FROM payments WHERE payments_id=:id AND payments_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['id' => $id]);
 		}
 		$_SESSION['success'] = 'Payments roll bcaked successfully';

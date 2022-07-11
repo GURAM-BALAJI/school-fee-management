@@ -6,7 +6,7 @@ if (isset($_POST['id'])) {
 
 	$conn = $pdo->open();
 
-	$stmt = $conn->prepare("SELECT * FROM payments WHERE payments_students_id=:id order by payments_id DESC");
+	$stmt = $conn->prepare("SELECT * FROM payments WHERE payments_students_id=:id AND payments_school_id=" . $_SESSION['admin_school_id'] . " order by payments_id DESC");
 	$stmt->execute(['id' => $id]);
 	$slno = 1;
 	$fee_view = "<table border='1' style='width: 100%;'><tr ><th style='padding: 10px;'>SLNO</th><th style='padding: 10px;'>ID</th><th style='padding: 10px;'>TYPE</th><th style='padding: 10px;'>PAID</th><th style='padding: 10px;'>THROUGH</th><th style='padding: 10px;'>DATE AND TIME</th><th style='padding: 10px;'>BY</th></tr>";

@@ -15,7 +15,7 @@
                             <select id='student_id' name="student_id" required style="width: 100%;">
                                 <option disabled selected> Select Student </option>
                                 <?php
-                                $stmt1 = $conn->prepare("SELECT * FROM students");
+                                $stmt1 = $conn->prepare("SELECT * FROM students WHERE students_school_id=" . $_SESSION['admin_school_id'] . "");
                                 $stmt1->execute();
                                 foreach ($stmt1 as $row1)
                                     echo "<option value='" . $row1['students_id'] . "'>" . $row1['students_name'] . " ( " . $row1['students_regestration_no'] ." ), Father : " . $row1['students_father_name'] . ", Mother : " . $row1['students_mother_name'] ."</option>";

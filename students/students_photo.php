@@ -6,17 +6,17 @@ if ($req_per == 1) {
 		$id = $_POST['id'];
 		$filename = $_FILES['photo']['name'];
 		if (!empty($filename)) {
-			$stmt = $conn->prepare("SELECT students_photo FROM students WHERE students_id=:id");
+			$stmt = $conn->prepare("SELECT students_photo FROM students WHERE students_id=:id  AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute(['id' => $id]);
 			foreach ($stmt as $row)
 				unlink('../students_photo/' . $row['students_photo']);
 			$filename = $_FILES['photo']['name'];
 			$ext = pathinfo($filename, PATHINFO_EXTENSION);
-			$filename = date('Y-m-d') . '_' . time() . '.' . $ext;
+			$filename = $_SESSION['admin_school_id'].'_'.date('Y-m-d') . '_' . time() . '.' . $ext;
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../students_photo/' . $filename);
 			$conn = $pdo->open();
 			try {
-				$stmt = $conn->prepare("UPDATE students SET students_photo=:photo WHERE students_id=:id");
+				$stmt = $conn->prepare("UPDATE students SET students_photo=:photo WHERE students_id=:id  AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 				$stmt->execute(['photo' => $filename, 'id' => $id]);
 				$_SESSION['success'] = 'students photo updated successfully';
 			} catch (PDOException $e) {

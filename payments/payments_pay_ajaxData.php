@@ -15,7 +15,7 @@ if (isset($_POST["student_id"]) && !empty($_POST["student_id"]) && isset($_POST[
     elseif ($fee_type == 4)
         $type = "students_total_transport_fee";
     $conn = $pdo->open();
-    $stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:student_id");
+    $stmt = $conn->prepare("SELECT * FROM students WHERE students_id=:student_id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
     $stmt->execute(['student_id' => $student_id]);
     $data = $stmt->fetchAll();
     if (!empty($data)) {

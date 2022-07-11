@@ -19,6 +19,7 @@
 					if(password_verify($password, $row['admin_password'])){
                         $_SESSION['rpis_admin']='True';
 						$_SESSION['rpis_id_admin'] = $row['admin_id'];
+						$_SESSION['admin_school_id'] = $row['admin_school_id'];
 					}
                     else{
 						$_SESSION['error'] = 'Incorrect details';

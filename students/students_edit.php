@@ -22,7 +22,7 @@ if ($req_per == 1) {
 		$students_mother_phone = $_POST['students_mother_phone'];
 		$students_mother_occupation = $_POST['students_mother_occupation'];
 		try {
-			$stmt1 = $conn->prepare("SELECT classes_and_fee_fee  FROM classes_and_fee WHERE classes_and_fee_value='$classes_and_fee_value'");
+			$stmt1 = $conn->prepare("SELECT classes_and_fee_fee  FROM classes_and_fee WHERE classes_and_fee_value='$classes_and_fee_value' AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . "");
 		$stmt1->execute();
 		foreach ($stmt1 as $row1)
 			$classes_and_fee_fee = $row1['classes_and_fee_fee'];
@@ -48,7 +48,7 @@ if ($req_per == 1) {
 			students_father_occupation=:students_father_occupation,
 			students_mother_occupation=:students_mother_occupation,
 			students_address=:students_address,
-			students_updated_date=:students_updated_date WHERE students_id=:id");
+			students_updated_date=:students_updated_date WHERE students_id=:id AND students_school_id=" . $_SESSION['admin_school_id'] . "");
 			$stmt->execute([
 				'students_regestration_no'=>$students_regestration_no,
 				'students_total_school_fee'=>$classes_and_fee_fee,

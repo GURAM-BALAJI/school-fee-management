@@ -56,7 +56,7 @@ include '../includes/header.php'; ?>
                   <?php
                   date_default_timezone_set('Asia/Kolkata');
                   $today = date('d-m-Y');
-                  $sql6 = "SELECT * FROM payments WHERE payments_date='$today'";
+                  $sql6 = "SELECT * FROM payments WHERE payments_date='$today' AND payments_school_id=" . $_SESSION['admin_school_id'] . " ";
                   $query6 = $conn->prepare($sql6);;
                   $query6->execute();
                   $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
@@ -68,7 +68,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-money"></i>
                 </div>
-                <a href="../payments/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../payments/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
@@ -78,7 +78,7 @@ include '../includes/header.php'; ?>
               <div class="small-box bg-green">
                 <div class="inner">
                   <?php
-                  $sql6 = "SELECT students_id from students Where students_deleted='0'";
+                  $sql6 = "SELECT students_id from students Where students_deleted='0' AND students_school_id=" . $_SESSION['admin_school_id'] . " ";
                   $query6 = $conn->prepare($sql6);;
                   $query6->execute();
                   $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
@@ -90,22 +90,22 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-users"></i>
                 </div>
-                <a href="../students/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../students/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
-          <?php if ($admin['admin_view']) { ?>
+          <?php if ($admin['admin_view'] && $admin['admin_type']==0 ) { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
                   <?php
-                  $sql6 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=1";
+                  $sql6 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=1 AND admin_school_id=" . $_SESSION['admin_school_id'] . " ";
                   $query6 = $conn->prepare($sql6);;
                   $query6->execute();
                   $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
                   $query = $query6->rowCount();
-                  $sql2 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=0";
+                  $sql2 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=0 AND admin_school_id=" . $_SESSION['admin_school_id'] . " ";
                   $query2 = $conn->prepare($sql2);;
                   $query2->execute();
                   $results2 = $query2->fetchAll(PDO::FETCH_OBJ);
@@ -118,7 +118,7 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-grav"></i>
                 </div>
-                <a href="../admin/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../admin/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
@@ -129,7 +129,7 @@ include '../includes/header.php'; ?>
               <div class="small-box bg-yellow">
                 <div class="inner">
                   <?php
-                  $sql6 = "SELECT classes_and_fee_id from classes_and_fee ";
+                  $sql6 = "SELECT classes_and_fee_id from classes_and_fee WHERE classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . " ";
                   $query6 = $conn->prepare($sql6);;
                   $query6->execute();
                   $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
@@ -141,11 +141,68 @@ include '../includes/header.php'; ?>
                 <div class="icon">
                   <i class="fa fa-signal"></i>
                 </div>
-                <a href="../classes_and_fee/" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="../classes_and_fee/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
           <?php } ?>
 
+          <?php if ($admin['admin_type']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <?php
+                  $sql6 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=1 AND admin_type=0";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  $sql2 = "SELECT admin_id from admin Where admin_delete=0 AND admin_status=0 AND admin_type=0";
+                  $query2 = $conn->prepare($sql2);;
+                  $query2->execute();
+                  $results2 = $query2->fetchAll(PDO::FETCH_OBJ);
+                  $query1 = $query2->rowCount();
+                  echo "<h6>Active Admin's: " . htmlentities($query) . "</h6>";
+                  echo "<h6>In-Active Admin's: " . htmlentities($query1) . "</h6>";
+                  echo "<h6>Total Admin's: " . htmlentities($query1 + $query) . "</h6>";
+                  ?>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-grav"></i>
+                </div>
+                <a href="../supper_admin/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
+
+          <?php if ($admin['admin_type']) { ?>
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <?php
+                  $sql6 = "SELECT DISTINCT admin_school_id from admin Where admin_delete=0 AND admin_status=1 AND admin_type=0";
+                  $query6 = $conn->prepare($sql6);;
+                  $query6->execute();
+                  $results6 = $query6->fetchAll(PDO::FETCH_OBJ);
+                  $query = $query6->rowCount();
+                  $sql2 = "SELECT DISTINCT admin_school_id from admin Where admin_delete=0 AND admin_status=0 AND admin_type=0";
+                  $query2 = $conn->prepare($sql2);;
+                  $query2->execute();
+                  $results2 = $query2->fetchAll(PDO::FETCH_OBJ);
+                  $query1 = $query2->rowCount();
+                  echo "<h6>Active Distinct Admin's: " . htmlentities($query) . "</h6>";
+                  echo "<h6>In-Active Distinct Admin's: " . htmlentities($query1) . "</h6>";
+                  echo "<h6>Total Distinct Admin's: " . htmlentities($query1 + $query) . "</h6>";
+                  ?>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+                <a href="../supper_admin/index.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          <?php } ?>
 
         </div>
     </div>

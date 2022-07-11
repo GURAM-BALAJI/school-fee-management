@@ -6,7 +6,7 @@
 		
 		$conn = $pdo->open();
 
-		$stmt = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_id=:id");
+		$stmt = $conn->prepare("SELECT * FROM classes_and_fee WHERE classes_and_fee_id=:id AND classes_and_fee_school_id=" . $_SESSION['admin_school_id'] . " ");
 		$stmt->execute(['id'=>$id]);
 		$row = $stmt->fetch();
 		
